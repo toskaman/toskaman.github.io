@@ -10,9 +10,10 @@ Version actuelle : mai 2026, avec parcours informatique, Lua, APIs, IA, modeles 
 
 ## Modifier le contenu
 
-- `index.html` : textes, projets, liens GitHub/Discord/email.
-- `styles.css` : couleurs, responsive, visuels des cartes.
-- `script.js` : recherche, filtres, theme clair/sombre, animation du hero.
+- `index.html` : textes, projets, liens GitHub/Discord/email. Chaque projet est une `article.card` dans un groupe (`card--sm`, `card--lg` ou `card--xl` pour la taille).
+- `styles.css` : tokens de couleurs (theme sombre/clair), typographie, responsive, visuels des cartes.
+- `script.js` : traductions FR/EN, recherche, filtres, theme clair/sombre, champ ASCII anime du hero, terminal, compteurs, fenetre de detail des projets.
+- `assets/fonts/` : polices Geist et Geist Mono auto-hebergees (licence SIL OFL, voir `OFL.txt`).
 - `assets/favicon.svg` : icone du site.
 
 Contacts configures :
