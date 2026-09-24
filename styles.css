@@ -1543,6 +1543,10 @@ html:not(.js) .filter.is-active {
   border-top: 1px solid var(--line);
 }
 
+.card-stats--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .card-stats div {
   display: flex;
   flex-direction: column-reverse;
@@ -2519,7 +2523,7 @@ html:not(.js) .filter.is-active {
 .modules-grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-auto-rows: minmax(0, 1fr);
   gap: 8px;
   margin: 0;
@@ -2644,7 +2648,7 @@ html:not(.js) .filter.is-active {
 
 .collection-bar span {
   display: block;
-  width: 66.7%;
+  width: var(--w, 66.7%);
   height: 100%;
   border-radius: inherit;
   background: var(--accent);
@@ -2656,78 +2660,222 @@ html:not(.js) .filter.is-active {
   transform: scaleX(0);
 }
 
+.card--xl .collection {
+  width: min(100%, 540px);
+}
+
+.card--xl .collection-grid {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
 .dialog-media .collection {
-  width: min(100%, 340px);
+  width: min(100%, 520px);
 }
 
-/* Connected devices (Tuya) */
-.v-iot {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 18px;
-}
-
-.iot {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.iot-tile {
+/* 2D room map (QuantumClean Pro 2026) */
+.v-map {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+  padding: 22px;
+}
+
+.map {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 12px 14px;
   border: 1px solid var(--line-2);
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--surface);
-  color: var(--ink-2);
-  transition:
-    color 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+  box-shadow: 0 26px 50px -26px rgba(0, 0, 0, 0.7);
+  font-family: var(--font-mono);
 }
 
-.iot-tile .i {
-  width: 24px;
-  height: 24px;
+.map-head,
+.map-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink-3);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.iot-tile--hub {
-  width: 72px;
-  height: 72px;
-  border-radius: 20px;
+.map-head span:first-child {
   color: var(--ink);
 }
 
-.iot-tile--hub .i {
-  width: 30px;
-  height: 30px;
+.map-foot {
+  justify-content: flex-start;
+  gap: 16px;
 }
 
-.iot-link {
-  width: 34px;
-  height: 1px;
-  background: repeating-linear-gradient(90deg, var(--line-2) 0 4px, transparent 4px 8px);
-  background-size: 16px 1px;
+.map-foot span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.card:hover .iot-link {
-  background-image: repeating-linear-gradient(90deg, var(--accent) 0 4px, transparent 4px 8px);
-  animation: iot-flow 0.8s linear infinite;
+.map-plot {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: visible;
 }
 
-.card:hover .iot-tile--bulb {
-  color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
-  box-shadow: 0 0 30px -6px color-mix(in srgb, var(--accent) 55%, transparent);
+.map-room {
+  fill: color-mix(in srgb, var(--ink) 3%, transparent);
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
 }
 
-@keyframes iot-flow {
+.map-trail {
+  fill: none;
+  stroke: var(--accent);
+  stroke-opacity: 0.4;
+  stroke-width: 1.2;
+  stroke-dasharray: 3 3;
+}
+
+.map-furniture {
+  fill: var(--surface-3);
+  stroke: var(--line-2);
+}
+
+.map-wall {
+  fill: none;
+  stroke: #ef4444;
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+
+.map-dock {
+  fill: var(--ok);
+}
+
+.map-robot circle {
+  fill: var(--ink);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.map-robot path {
+  fill: none;
+  stroke: var(--bg);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.map-key {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 1.5px var(--accent);
+}
+
+.map-key--wall {
+  width: 12px;
+  height: 0;
+  border-top: 2px dashed #ef4444;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.map-key--dock {
+  border-radius: 2px;
+  background: var(--ok);
+  box-shadow: none;
+}
+
+/* Ambient glow (JellyBite) */
+.v-ambi {
+  --ambi: linear-gradient(115deg, #1d4ed8 0%, #0ea5e9 30%, #f59e0b 66%, #db2777 100%);
+
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 52px;
+}
+
+.ambi {
+  position: relative;
+  width: min(56vw, 250px);
+  aspect-ratio: 16 / 9;
+  margin-top: 8px;
+  transition: filter 0.6s ease;
+}
+
+.ambi-glow {
+  position: absolute;
+  inset: -16%;
+  border-radius: 28px;
+  background: var(--ambi);
+  opacity: 0.72;
+  filter: blur(22px);
+  transition:
+    opacity 0.6s ease,
+    filter 0.6s ease;
+}
+
+.ambi-screen {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  background:
+    linear-gradient(#000 0 11%, transparent 11% 89%, #000 89%),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    var(--ambi);
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.7);
+}
+
+.ambi-pip {
+  --ambi: linear-gradient(135deg, #10b981, #6366f1);
+
+  position: absolute;
+  right: -30%;
+  bottom: -24%;
+  width: 36%;
+  aspect-ratio: 16 / 9;
+}
+
+.ambi-pip .ambi-glow {
+  inset: -24%;
+  border-radius: 18px;
+  filter: blur(12px);
+}
+
+.ambi-pip .ambi-screen {
+  border-radius: 4px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    var(--ambi);
+}
+
+.card:hover .ambi-glow {
+  opacity: 1;
+}
+
+.card:hover .ambi {
+  animation: ambi-hue 7s linear infinite;
+}
+
+@keyframes ambi-hue {
   to {
-    background-position: 16px 0;
+    filter: hue-rotate(1turn);
   }
+}
+
+.v-ambi .v-caption {
+  position: relative;
 }
 
 /* ---------- Skills ---------- */
@@ -3660,6 +3808,15 @@ html:not(.js) .filter.is-active {
   }
 
   .modules-status {
+    display: none;
+  }
+
+  .card-stats--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .map-foot span:nth-child(3),
+  .map-head span:last-child {
     display: none;
   }
 
