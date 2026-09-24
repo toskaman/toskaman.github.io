@@ -37,7 +37,12 @@
           { "@type": "SoftwareApplication", "name": "Technician Optimization Tool", "applicationCategory": "Utilities" },
           { "@type": "SoftwareApplication", "name": "Gemini 3.5 Security Bypass", "applicationCategory": "SecurityApplication" },
           { "@type": "SoftwareApplication", "name": "Sliderman: Gemini & Custom Windows Modules", "applicationCategory": "Utilities" },
-          { "@type": "SoftwareApplication", "name": "Complete Discord Bot", "applicationCategory": "Automation" }
+          { "@type": "SoftwareApplication", "name": "Firefall Server Reconstruction (PIN)", "applicationCategory": "GameApplication" },
+          { "@type": "SoftwareApplication", "name": "Antigravity+", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "name": "Watch7", "applicationCategory": "HealthApplication" },
+          { "@type": "SoftwareApplication", "name": "Rifty / SnitchersBot", "applicationCategory": "Automation" },
+          { "@type": "SoftwareApplication", "name": "Roblox Pet Tracker", "applicationCategory": "GameApplication" },
+          { "@type": "SoftwareApplication", "name": "Tuya", "applicationCategory": "Utilities" }
         ]
       }
     }
@@ -59,7 +64,7 @@
     <link rel="icon" href="assets/favicon.svg?v=2026-09-24-1" type="image/svg+xml" />
     <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="styles.css?v=2026-09-24-1" />
+    <link rel="stylesheet" href="styles.css?v=2026-09-24-2" />
   </head>
   <body>
     <a class="skip-link" href="#about" data-t="skip_link">Skip to content</a>
@@ -280,6 +285,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             <h2 class="section-title" id="projects-title" data-t="projects_title">Selection of Work</h2>
           </header>
 
+          <div class="notices">
           <aside class="notice" aria-labelledby="security-notice-title" data-reveal>
             <span class="notice-icon" aria-hidden="true">
               <svg class="i" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 8.2 7 9.5 4.1-1.3 7-5.2 7-9.5V6l-7-3Z" /><path d="m9.5 12 1.8 1.8L15 10" /></svg>
@@ -292,6 +298,19 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
               </p>
             </div>
           </aside>
+
+          <aside class="notice notice--private" aria-labelledby="private-notice-title" data-reveal="1">
+            <span class="notice-icon" aria-hidden="true">
+              <svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /><path d="M12 15v2" /></svg>
+            </span>
+            <div>
+              <p class="notice-eyebrow" data-t="private_notice_eyebrow">Confidentiality</p>
+              <h3 id="private-notice-title" data-t="private_notice_title">Private sources, available on request</h3>
+              <p data-t="private_notice_body">A large part of the source code, proofs of concept and technical evidence behind these projects is deliberately kept private.</p>
+              <a class="notice-link" href="#contact"><span data-t="private_notice_cta">Request access</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+            </div>
+          </aside>
+          </div>
 
           <div class="work-controls" data-reveal>
             <label class="search">
@@ -316,9 +335,66 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             <div class="group-head" data-reveal>
               <span class="group-index">A</span>
               <h3 class="group-title" data-t="group_research">Research &amp; Engineering</h3>
-              <span class="group-count" data-group-count>04</span>
+              <span class="group-count" data-group-count>05</span>
             </div>
             <div class="work-grid">
+              <article
+                class="card card--full"
+                data-reveal
+                data-category="research game"
+                data-title="Firefall — Reconstruction du serveur (PIN)"
+                data-summary="Reconstruction complète du serveur de Firefall menée seul sur la base des fichiers des développeurs du projet PIN (Pirate Intelligence Network) : C# .NET 9, protocole Matrix et GSS, IA, combat, véhicules, économie, social."
+                data-tags="C#, .NET 9, Reverse engineering, Networking, MMO, Firefall, PIN"
+              >
+                <div class="card-visual v-server" aria-hidden="true">
+                  <div class="server">
+                    <div class="server-head">
+                      <span>PIN · game server</span>
+                      <span class="server-live"><i></i>prod-1962</span>
+                    </div>
+                    <ul class="server-rows">
+                      <li><span>Matrix login &amp; handshake</span><b>Working</b></li>
+                      <li><span>Zone loading &amp; streaming</span><b>Working</b></li>
+                      <li><span>Movement, jetpacks &amp; gliders</span><b>Working</b></li>
+                      <li><span>Weapons &amp; projectiles</span><b>Working</b></li>
+                      <li><span>Enemy AI &amp; combat behavior</span><b>Working</b></li>
+                      <li><span>Vehicles (LGV, MGV)</span><b>Working</b></li>
+                      <li><span>Crafting &amp; blueprints</span><b>Working</b></li>
+                      <li><span>Abilities engine</span><b class="is-partial">Partial</b></li>
+                      <li><span>Missions &amp; objectives</span><b class="is-partial">Partial</b></li>
+                    </ul>
+                    <div class="server-foot"><span>17 / 20 subsystems working</span><span>.NET 9</span></div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-type" data-t="type_server">Server reconstruction</span>
+                    <span class="card-private"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg><span data-t="private_source">Private source</span></span>
+                  </div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_firefall">Firefall — Server Reconstruction (PIN)</button></h4>
+                  <p class="card-desc" data-t="p_firefall">Full reconstruction of the Firefall server, carried out solo on top of the base files from the PIN (Pirate Intelligence Network) developers.</p>
+                  <dl class="card-stats">
+                    <div><dt data-t="ff_stat_phases">phases complete</dt><dd>13</dd></div>
+                    <div><dt data-t="ff_stat_tests">tests passing</dt><dd>164/164</dd></div>
+                    <div><dt data-t="ff_stat_projects">projects, 0 warnings</dt><dd>25</dd></div>
+                    <div><dt data-t="ff_stat_subsystems">subsystems working</dt><dd>17/20</dd></div>
+                  </dl>
+                  <ul class="card-features">
+                    <li><b data-t="ff_f1_t">Networking</b><span data-t="ff_f1_d">Matrix handshake, 4-channel GSS multiplexing, split-packet reassembly and protocol hardening through fuzzing.</span></li>
+                    <li><b data-t="ff_f2_t">World & streaming</b><span data-t="ff_f2_d">Zone loading, instance assignment and seamless border transitions.</span></li>
+                    <li><b data-t="ff_f3_t">Movement & physics</b><span data-t="ff_f3_d">Jetpacks, gliders, BepuPhysics2 collisions, server-side position anti-cheat and multi-passenger vehicles.</span></li>
+                    <li><b data-t="ff_f4_t">Combat</b><span data-t="ff_f4_d">Ballistic projectile simulation, faction hostility matrix, headshots, critical hits and armor mitigation curves.</span></li>
+                    <li><b data-t="ff_f5_t">Abilities</b><span data-t="ff_f5_d">Server-authoritative aptitude engine — 27 command milestones implemented and tested.</span></li>
+                    <li><b data-t="ff_f6_t">AI engine</b><span data-t="ff_f6_d">4 Hz AI loop, A* NavMesh pathfinding, arachnid leap attacks, Chosen sniper and juggernaut tactics.</span></li>
+                    <li><b data-t="ff_f7_t">Encounters & missions</b><span data-t="ff_f7_d">Thumpers with dynamic waves and hive eruptions, mission chains, objectives and achievements.</span></li>
+                    <li><b data-t="ff_f8_t">Economy</b><span data-t="ff_f8_d">3D world loot drops, recursive loot tables, Red Bean store, marketplace, crafting and token vending machines.</span></li>
+                    <li><b data-t="ff_f9_t">Social</b><span data-t="ff_f9_d">Armies with ranks and rosters, friends and online presence, multi-channel chat (zone, squad, army, whispers).</span></li>
+                    <li><b data-t="ff_f10_t">Quality</b><span data-t="ff_f10_d">164/164 automated tests, 0 compiler warnings across 25 projects, soak testing and 50-player concurrent load tests.</span></li>
+                  </ul>
+                  <ul class="card-tags"><li>C#</li><li>.NET 9</li><li>Reverse engineering</li><li>Networking</li><li>MMO</li></ul>
+                </div>
+              </article>
+
               <article
                 class="card card--lg"
                 data-reveal
@@ -430,10 +506,82 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             </div>
           </div>
 
-          <!-- ─── Windows Tools & Desktop ─── -->
+          <!-- ─── AI Tooling & Telemetry ─── -->
           <div class="work-group" data-group>
             <div class="group-head" data-reveal>
               <span class="group-index">B</span>
+              <h3 class="group-title" data-t="group_tooling">AI Tooling &amp; Telemetry</h3>
+              <span class="group-count" data-group-count>02</span>
+            </div>
+            <div class="work-grid">
+              <article
+                class="card card--lg"
+                data-reveal
+                data-category="desktop automation extension"
+                data-title="Antigravity+"
+                data-summary="Surcouche pour l'IDE IA Antigravity : projets actifs mis en évidence, favoris épinglés, recherche rapide Ctrl+F, double jauge de quotas Gemini et Claude/Opus en temps réel, moteur de performance."
+                data-tags="Antigravity, IDE, React 19, Performance, AI quotas, Gemini, Claude"
+              >
+                <div class="card-visual v-ag" aria-hidden="true">
+                  <img src="assets/antigravity_settings.png" alt="Antigravity+ settings panel" loading="lazy" decoding="async" />
+                  <img src="assets/antigravity_quotas.png" alt="Antigravity+ real-time quota gauges" loading="lazy" decoding="async" />
+                  <img src="assets/antigravity_badge.png" alt="Antigravity+ entry in the Antigravity sidebar" loading="lazy" decoding="async" />
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_ide">IDE extension</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_antigravity">Antigravity+</button></h4>
+                  <p class="card-desc" data-t="p_antigravity">Enhancement layer for the Antigravity AI IDE.</p>
+                  <ul class="card-features">
+                    <li><b data-t="ag_f1_t">Active project highlighting</b><span data-t="ag_f1_d">Pulsing green dot and smart side border on projects running a task or sub-agent — zero lag, sub-millisecond.</span></li>
+                    <li><b data-t="ag_f2_t">Pinned projects & favorites</b><span data-t="ag_f2_d">Pin favorite projects to the top of the sidebar for instant access.</span></li>
+                    <li><b data-t="ag_f3_t">Quick search (Ctrl+F)</b><span data-t="ag_f3_d">Search bar built into the sidebar to filter projects and conversations instantly.</span></li>
+                    <li><b data-t="ag_f4_t">Real-time dual quota gauge</b><span data-t="ag_f4_d">Live gauges for Gemini and Claude/Opus in the title bar: weekly and 5-hour limits, reset countdowns and continuous sync.</span></li>
+                    <li><b data-t="ag_f5_t">Scoped DOM Guardian</b><span data-t="ag_f5_d">Observation confined to the required containers — 0% reflow on document.body.</span></li>
+                    <li><b data-t="ag_f6_t">Async disk cache & source right-click</b><span data-t="ag_f6_d">Background indexing and instant opening of code folders.</span></li>
+                    <li><b data-t="ag_f7_t">React 19 & resilient selectors</b><span data-t="ag_f7_d">O(1) memoization and selectors designed to survive future Antigravity updates.</span></li>
+                    <li><b data-t="ag_f8_t">Updates</b><span data-t="ag_f8_d">Installed version display and one-click update check.</span></li>
+                  </ul>
+                  <ul class="card-tags"><li>Antigravity</li><li>React 19</li><li>Performance</li><li>AI quotas</li></ul>
+                </div>
+              </article>
+
+              <article
+                class="card card--lg"
+                data-reveal
+                data-category="desktop research"
+                data-title="Watch7"
+                data-summary="Application PC qui affiche en temps réel toutes les données de ma montre, avec une visualisation ultra précise de niveau scientifique."
+                data-tags="Watch7, Smartwatch, Real-time, Telemetry, Data visualization, Desktop"
+              >
+                <div class="card-visual v-telemetry" aria-hidden="true">
+                  <div class="tele">
+                    <div class="tele-head">
+                      <span><i class="tele-rec"></i>Watch7 · live</span>
+                      <span>t → realtime</span>
+                    </div>
+                    <svg class="tele-plot" viewBox="0 0 400 160" preserveAspectRatio="none">
+                      <path class="tele-grid" d="M0 40H400M0 92H400M0 134H400M50 0V160M100 0V160M150 0V160M200 0V160M250 0V160M300 0V160M350 0V160" />
+                      <g class="tele-trace tele-trace--1"><path d="M0 40.0 L4 40.0 L8 40.0 L12 40.0 L16 40.0 L20 40.0 L24 40.0 L28 40.0 L32 40.0 L36 40.0 L40 40.0 L44 35.7 L48 40.6 L52 30.9 L56 30.2 L60 43.2 L64 40.0 L68 40.0 L72 37.7 L76 35.3 L80 37.7 L84 40.0 L88 40.0 L92 40.0 L96 40.0 L100 40.0 L104 40.0 L108 40.0 L112 40.0 L116 40.0 L120 40.0 L124 40.0 L128 40.0 L132 40.0 L136 40.0 L140 40.0 L144 35.7 L148 40.6 L152 30.9 L156 30.2 L160 43.2 L164 40.0 L168 40.0 L172 37.7 L176 35.3 L180 37.7 L184 40.0 L188 40.0 L192 40.0 L196 40.0 L200 40.0 L204 40.0 L208 40.0 L212 40.0 L216 40.0 L220 40.0 L224 40.0 L228 40.0 L232 40.0 L236 40.0 L240 40.0 L244 35.7 L248 40.6 L252 30.9 L256 30.2 L260 43.2 L264 40.0 L268 40.0 L272 37.7 L276 35.3 L280 37.7 L284 40.0 L288 40.0 L292 40.0 L296 40.0 L300 40.0 L304 40.0 L308 40.0 L312 40.0 L316 40.0 L320 40.0 L324 40.0 L328 40.0 L332 40.0 L336 40.0 L340 40.0 L344 35.7 L348 40.6 L352 30.9 L356 30.2 L360 43.2 L364 40.0 L368 40.0 L372 37.7 L376 35.3 L380 37.7 L384 40.0 L388 40.0 L392 40.0 L396 40.0 L400 40.0 L404 40.0 L408 40.0 L412 40.0 L416 40.0 L420 40.0 L424 40.0 L428 40.0 L432 40.0 L436 40.0 L440 40.0 L444 35.7 L448 40.6 L452 30.9 L456 30.2 L460 43.2 L464 40.0 L468 40.0 L472 37.7 L476 35.3 L480 37.7 L484 40.0 L488 40.0 L492 40.0 L496 40.0 L500 40.0 L504 40.0 L508 40.0 L512 40.0 L516 40.0 L520 40.0 L524 40.0 L528 40.0 L532 40.0 L536 40.0 L540 40.0 L544 35.7 L548 40.6 L552 30.9 L556 30.2 L560 43.2 L564 40.0 L568 40.0 L572 37.7 L576 35.3 L580 37.7 L584 40.0 L588 40.0 L592 40.0 L596 40.0 L600 40.0 L604 40.0 L608 40.0 L612 40.0 L616 40.0 L620 40.0 L624 40.0 L628 40.0 L632 40.0 L636 40.0 L640 40.0 L644 35.7 L648 40.6 L652 30.9 L656 30.2 L660 43.2 L664 40.0 L668 40.0 L672 37.7 L676 35.3 L680 37.7 L684 40.0 L688 40.0 L692 40.0 L696 40.0 L700 40.0 L704 40.0 L708 40.0 L712 40.0 L716 40.0 L720 40.0 L724 40.0 L728 40.0 L732 40.0 L736 40.0 L740 40.0 L744 35.7 L748 40.6 L752 30.9 L756 30.2 L760 43.2 L764 40.0 L768 40.0 L772 37.7 L776 35.3 L780 37.7 L784 40.0 L788 40.0 L792 40.0 L796 40.0 L800 40.0" /></g>
+                      <g class="tele-trace tele-trace--2"><path d="M0 92.0 L4 87.7 L8 83.8 L12 80.7 L16 78.7 L20 78.0 L24 78.7 L28 80.7 L32 83.8 L36 87.7 L40 92.0 L44 96.3 L48 100.2 L52 103.3 L56 105.3 L60 106.0 L64 105.3 L68 103.3 L72 100.2 L76 96.3 L80 92.0 L84 87.7 L88 83.8 L92 80.7 L96 78.7 L100 78.0 L104 78.7 L108 80.7 L112 83.8 L116 87.7 L120 92.0 L124 96.3 L128 100.2 L132 103.3 L136 105.3 L140 106.0 L144 105.3 L148 103.3 L152 100.2 L156 96.3 L160 92.0 L164 87.7 L168 83.8 L172 80.7 L176 78.7 L180 78.0 L184 78.7 L188 80.7 L192 83.8 L196 87.7 L200 92.0 L204 96.3 L208 100.2 L212 103.3 L216 105.3 L220 106.0 L224 105.3 L228 103.3 L232 100.2 L236 96.3 L240 92.0 L244 87.7 L248 83.8 L252 80.7 L256 78.7 L260 78.0 L264 78.7 L268 80.7 L272 83.8 L276 87.7 L280 92.0 L284 96.3 L288 100.2 L292 103.3 L296 105.3 L300 106.0 L304 105.3 L308 103.3 L312 100.2 L316 96.3 L320 92.0 L324 87.7 L328 83.8 L332 80.7 L336 78.7 L340 78.0 L344 78.7 L348 80.7 L352 83.8 L356 87.7 L360 92.0 L364 96.3 L368 100.2 L372 103.3 L376 105.3 L380 106.0 L384 105.3 L388 103.3 L392 100.2 L396 96.3 L400 92.0 L404 87.7 L408 83.8 L412 80.7 L416 78.7 L420 78.0 L424 78.7 L428 80.7 L432 83.8 L436 87.7 L440 92.0 L444 96.3 L448 100.2 L452 103.3 L456 105.3 L460 106.0 L464 105.3 L468 103.3 L472 100.2 L476 96.3 L480 92.0 L484 87.7 L488 83.8 L492 80.7 L496 78.7 L500 78.0 L504 78.7 L508 80.7 L512 83.8 L516 87.7 L520 92.0 L524 96.3 L528 100.2 L532 103.3 L536 105.3 L540 106.0 L544 105.3 L548 103.3 L552 100.2 L556 96.3 L560 92.0 L564 87.7 L568 83.8 L572 80.7 L576 78.7 L580 78.0 L584 78.7 L588 80.7 L592 83.8 L596 87.7 L600 92.0 L604 96.3 L608 100.2 L612 103.3 L616 105.3 L620 106.0 L624 105.3 L628 103.3 L632 100.2 L636 96.3 L640 92.0 L644 87.7 L648 83.8 L652 80.7 L656 78.7 L660 78.0 L664 78.7 L668 80.7 L672 83.8 L676 87.7 L680 92.0 L684 96.3 L688 100.2 L692 103.3 L696 105.3 L700 106.0 L704 105.3 L708 103.3 L712 100.2 L716 96.3 L720 92.0 L724 87.7 L728 83.8 L732 80.7 L736 78.7 L740 78.0 L744 78.7 L748 80.7 L752 83.8 L756 87.7 L760 92.0 L764 96.3 L768 100.2 L772 103.3 L776 105.3 L780 106.0 L784 105.3 L788 103.3 L792 100.2 L796 96.3 L800 92.0" /></g>
+                      <g class="tele-trace tele-trace--3"><path d="M0 134.0 L4 129.5 L8 126.9 L12 126.8 L16 127.8 L20 128.1 L24 127.2 L28 126.4 L32 127.0 L36 129.3 L40 131.9 L44 132.7 L48 130.9 L52 127.6 L56 124.9 L60 124.1 L64 124.9 L68 125.7 L72 125.3 L76 124.5 L80 125.0 L84 127.9 L88 132.5 L92 136.7 L96 138.6 L100 138.2 L104 137.0 L108 136.7 L112 137.6 L116 138.5 L120 138.1 L124 136.1 L128 134.3 L132 134.5 L136 137.3 L140 141.3 L144 144.2 L148 144.9 L152 144.2 L156 143.6 L160 144.1 L164 144.8 L168 144.1 L172 141.1 L176 136.7 L180 133.1 L184 132.0 L188 133.0 L192 134.6 L196 134.9 L200 134.0 L204 133.1 L208 133.4 L212 135.0 L216 136.0 L220 134.9 L224 131.3 L228 126.9 L232 123.9 L236 123.2 L240 123.9 L244 124.4 L248 123.8 L252 123.1 L256 123.8 L260 126.7 L264 130.7 L268 133.5 L272 133.7 L276 131.9 L280 129.9 L284 129.5 L288 130.4 L292 131.3 L296 131.0 L300 129.8 L304 129.4 L308 131.3 L312 135.5 L316 140.1 L320 143.0 L324 143.5 L328 142.7 L332 142.3 L336 143.1 L340 143.9 L344 143.1 L348 140.4 L352 137.1 L356 135.3 L360 136.1 L364 138.7 L368 141.0 L372 141.6 L376 140.8 L380 139.9 L384 140.2 L388 141.2 L392 141.1 L396 138.5 L400 134.0 L404 129.5 L408 126.9 L412 126.8 L416 127.8 L420 128.1 L424 127.2 L428 126.4 L432 127.0 L436 129.3 L440 131.9 L444 132.7 L448 130.9 L452 127.6 L456 124.9 L460 124.1 L464 124.9 L468 125.7 L472 125.3 L476 124.5 L480 125.0 L484 127.9 L488 132.5 L492 136.7 L496 138.6 L500 138.2 L504 137.0 L508 136.7 L512 137.6 L516 138.5 L520 138.1 L524 136.1 L528 134.3 L532 134.5 L536 137.3 L540 141.3 L544 144.2 L548 144.9 L552 144.2 L556 143.6 L560 144.1 L564 144.8 L568 144.1 L572 141.1 L576 136.7 L580 133.1 L584 132.0 L588 133.0 L592 134.6 L596 134.9 L600 134.0 L604 133.1 L608 133.4 L612 135.0 L616 136.0 L620 134.9 L624 131.3 L628 126.9 L632 123.9 L636 123.2 L640 123.9 L644 124.4 L648 123.8 L652 123.1 L656 123.8 L660 126.7 L664 130.7 L668 133.5 L672 133.7 L676 131.9 L680 129.9 L684 129.5 L688 130.4 L692 131.3 L696 131.0 L700 129.8 L704 129.4 L708 131.3 L712 135.5 L716 140.1 L720 143.0 L724 143.5 L728 142.7 L732 142.3 L736 143.1 L740 143.9 L744 143.1 L748 140.4 L752 137.1 L756 135.3 L760 136.1 L764 138.7 L768 141.0 L772 141.6 L776 140.8 L780 139.9 L784 140.2 L788 141.2 L792 141.1 L796 138.5 L800 134.0" /></g>
+                    </svg>
+                    <div class="tele-foot"><span>ch.01</span><span>ch.02</span><span>ch.03</span><span>sync ●</span></div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_telemetry">Real-time telemetry</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_watch7">Watch7</button></h4>
+                  <p class="card-desc" data-t="p_watch7">PC application that streams every data point from my watch in real time.</p>
+                  <ul class="card-tags"><li>Real-time</li><li>Telemetry</li><li>Wearable</li><li>Data viz</li></ul>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- ─── Windows Tools & Desktop ─── -->
+          <div class="work-group" data-group>
+            <div class="group-head" data-reveal>
+              <span class="group-index">C</span>
               <h3 class="group-title" data-t="group_desktop">Windows Tools &amp; Desktop</h3>
               <span class="group-count" data-group-count>10</span>
             </div>
@@ -643,11 +791,60 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
           <!-- ─── Games & Automation ─── -->
           <div class="work-group" data-group>
             <div class="group-head" data-reveal>
-              <span class="group-index">C</span>
+              <span class="group-index">D</span>
               <h3 class="group-title" data-t="group_games">Games &amp; Automation</h3>
-              <span class="group-count" data-group-count>09</span>
+              <span class="group-count" data-group-count>11</span>
             </div>
             <div class="work-grid">
+              <article
+                class="card card--xl"
+                data-reveal
+                data-category="automation game security"
+                data-title="Rifty · SnitchersBot"
+                data-summary="Bot Discord complet Rifty / SnitchersBot maintenu depuis plus de deux ans : sécurité, modération, mini-jeux, jeux, donjons, boss, échanges, cartes à collectionner, farming, économie et logs en tout genre."
+                data-tags="Discord, Bot, Sécurité, Modération, Mini-jeux, Donjons, Boss, Trading, Cartes à collectionner, Farming, Logs"
+              >
+                <div class="card-visual v-modules" aria-hidden="true">
+                  <div class="modules-head">
+                    <span class="modules-brand">
+                      <svg viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.06,72.06,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.73,32.65-1.86,56.6.8,80.1a105.73,105.73,0,0,0,32.17,16.26,77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.26c3.39-28.75-5.46-52.47-24.11-72.03ZM42.48,65.69C36.1,65.69,31,60,31,53s5.12-12.67,11.5-12.67S54,46,54,53,48.86,65.69,42.48,65.69Zm42.2,0C78.29,65.69,73.17,60,73.17,53s5.12-12.67,11.51-12.67S96.2,46,96.2,53,91.06,65.69,84.68,65.69Z" /></svg>
+                      Rifty · SnitchersBot
+                    </span>
+                    <span class="modules-status"><i></i>online · 2+ yrs</span>
+                  </div>
+                  <ul class="modules-grid">
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 8.2 7 9.5 4.1-1.3 7-5.2 7-9.5V6l-7-3Z" /></svg><span data-t="rf_sec_t">Security</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="m14.5 12.5-8 8a2.1 2.1 0 1 1-3-3l8-8" /><path d="m16 16 6-6M8 8l6-6M9 7l8 8M21 11l-8-8" /></svg><span data-t="rf_mod_t">Moderation</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" /><circle cx="8.5" cy="8.5" r=".9" /><circle cx="15.5" cy="15.5" r=".9" /><circle cx="12" cy="12" r=".9" /></svg><span data-t="rf_mini_t">Mini-games</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01" /><path d="M17.3 5H6.7a4 4 0 0 0-3.96 3.44l-.7 5.1A3 3 0 0 0 7.3 16L9 14h6l1.7 2a3 3 0 0 0 5.26-2.46l-.7-5.1A4 4 0 0 0 17.3 5Z" /></svg><span data-t="rf_games_t">Games</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="M4 21V8l2-2 2 2V4h3v3h2V4h3v4l2-2 2 2v13" /><path d="M3 21h18M10 21v-4a2 2 0 0 1 4 0v4" /></svg><span data-t="rf_dungeon_t">Dungeons</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="m3 8 4.5 4L12 5l4.5 7L21 8l-2 11H5L3 8Z" /></svg><span data-t="rf_boss_t">Bosses</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="M7 7h13l-4-4M17 17H4l4 4" /></svg><span data-t="rf_trade_t">Trading</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><rect x="8" y="3" width="12" height="16" rx="2" /><path d="M5 7v12a2 2 0 0 0 2 2h9" /></svg><span data-t="rf_cards_t">Collectible cards</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="M12 21v-9" /><path d="M12 12c0-4-3-7-8-7 0 4 3 7 8 7Z" /><path d="M12 14c0-3.5 2.5-6 7-6 0 3.5-2.5 6-7 6Z" /></svg><span data-t="rf_farm_t">Farming & economy</span></li>
+                    <li><svg class="i" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11" /><circle cx="4.5" cy="6" r=".9" /><circle cx="4.5" cy="12" r=".9" /><circle cx="4.5" cy="18" r=".9" /></svg><span data-t="rf_logs_t">Logs</span></li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_discord">Discord bot</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_rifty">Rifty · SnitchersBot</button></h4>
+                  <p class="card-desc" data-t="p_rifty">All-in-one Discord bot maintained for over two years.</p>
+                  <ul class="card-features">
+                    <li><b data-t="rf_sec_t">Security</b><span data-t="rf_sec_d">Server protection and monitoring of suspicious activity.</span></li>
+                    <li><b data-t="rf_mod_t">Moderation</b><span data-t="rf_mod_d">Complete moderation toolkit: warnings, sanctions and member management.</span></li>
+                    <li><b data-t="rf_mini_t">Mini-games</b><span data-t="rf_mini_d">Quick games playable directly in the channels.</span></li>
+                    <li><b data-t="rf_games_t">Games</b><span data-t="rf_games_d">Complete, persistent games with long-term progression.</span></li>
+                    <li><b data-t="rf_dungeon_t">Dungeons</b><span data-t="rf_dungeon_d">PvE dungeon runs.</span></li>
+                    <li><b data-t="rf_boss_t">Bosses</b><span data-t="rf_boss_d">Dedicated boss encounters.</span></li>
+                    <li><b data-t="rf_trade_t">Trading</b><span data-t="rf_trade_d">Player-to-player exchanges and trading.</span></li>
+                    <li><b data-t="rf_cards_t">Collectible cards</b><span data-t="rf_cards_d">Complete collectible card system.</span></li>
+                    <li><b data-t="rf_farm_t">Farming & economy</b><span data-t="rf_farm_d">Resources, in-bot currency and progression.</span></li>
+                    <li><b data-t="rf_logs_t">Logs</b><span data-t="rf_logs_d">Logs of every kind for full visibility over the server.</span></li>
+                  </ul>
+                  <ul class="card-tags"><li>Discord</li><li>Moderation</li><li>Game systems</li><li>Economy</li><li>Logs</li></ul>
+                </div>
+              </article>
+
               <article
                 class="card card--sm"
                 data-reveal
@@ -691,6 +888,31 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
                     <a class="card-link" href="https://www.roblox.com/games/17255321367/Rift-Slasher" target="_blank" rel="noopener"><span>Rift Slasher</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                   </div>
                   <ul class="card-tags"><li>Roblox</li><li>Gameplay</li><li>Lua</li></ul>
+                </div>
+              </article>
+
+              <article
+                class="card card--sm"
+                data-reveal
+                data-category="game"
+                data-title="Roblox Pet Tracker"
+                data-summary="Tracker dédié aux pets Roblox, pensé pour les suivre et les surveiller en un coup d'œil."
+                data-tags="Roblox, Pets, Tracker, Suivi"
+              >
+                <div class="card-visual v-radar" aria-hidden="true">
+                  <div class="radar">
+                    <span class="radar-sweep"></span>
+                    <i style="--x: 64%; --y: 30%"></i>
+                    <i style="--x: 30%; --y: 56%"></i>
+                    <i style="--x: 70%; --y: 70%"></i>
+                  </div>
+                  <span class="v-caption">Roblox · pets</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_roblox_tool">Roblox tool</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_pet_tracker">Roblox Pet Tracker</button></h4>
+                  <p class="card-desc" data-t="p_pet_tracker">Dedicated tracker for Roblox pets, built to follow and monitor them at a glance.</p>
+                  <ul class="card-tags"><li>Roblox</li><li>Tracking</li><li>Pets</li></ul>
                 </div>
               </article>
 
@@ -748,30 +970,6 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
                   <h4 class="card-title"><button class="card-open" type="button" data-t="title_servers">Ultra-Modded Game Servers</button></h4>
                   <p class="card-desc" data-t="p_servers">Creation of Minecraft, GMod, FiveM servers, and other heavily customized environments.</p>
                   <ul class="card-tags"><li>Minecraft</li><li>GMod</li><li>FiveM</li></ul>
-                </div>
-              </article>
-
-              <article
-                class="card card--sm"
-                data-reveal
-                data-category="automation game"
-                data-title="Bot Discord complet"
-                data-summary="Bot Discord maintenu depuis plus de deux ans avec mini-jeux, donjon, trading, farming, modération complète et logs."
-                data-tags="Discord, Bot, Modération, Game economy, Logs"
-              >
-                <div class="card-visual v-logos v-logos--solo" aria-hidden="true">
-                  <figure style="--brand: #5865f2">
-                    <span class="logo-tile">
-                      <svg viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.06,72.06,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.73,32.65-1.86,56.6.8,80.1a105.73,105.73,0,0,0,32.17,16.26,77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.26c3.39-28.75-5.46-52.47-24.11-72.03ZM42.48,65.69C36.1,65.69,31,60,31,53s5.12-12.67,11.5-12.67S54,46,54,53,48.86,65.69,42.48,65.69Zm42.2,0C78.29,65.69,73.17,60,73.17,53s5.12-12.67,11.51-12.67S96.2,46,96.2,53,91.06,65.69,84.68,65.69Z" /></svg>
-                    </span>
-                    <figcaption>Discord</figcaption>
-                  </figure>
-                </div>
-                <div class="card-body">
-                  <div class="card-meta"><span class="card-type" data-t="type_discord">Discord bot</span></div>
-                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_discord">Complete Discord Bot</button></h4>
-                  <p class="card-desc" data-t="p_discord">Mini-games, complete dungeon/trading/farming game, moderation, logs, and continuous maintenance for 2+ years.</p>
-                  <ul class="card-tags"><li>Moderation</li><li>Game bot</li><li>Logs</li></ul>
                 </div>
               </article>
 
@@ -880,6 +1078,32 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
                   <h4 class="card-title"><button class="card-open" type="button" data-t="title_ai">AI Experimentation &amp; Local Models</button></h4>
                   <p class="card-desc" data-t="p_ai">Claude, Gemini, DeepSeek, CLI versions, and dozens of local models tested to compare behaviors and integrate them into tools.</p>
                   <ul class="card-tags"><li>Claude</li><li>Gemini</li><li>Codex</li><li>Local</li></ul>
+                </div>
+              </article>
+
+              <article
+                class="card card--sm"
+                data-reveal
+                data-category="automation desktop"
+                data-title="Tuya"
+                data-summary="Projet domotique autour de l'écosystème Tuya : pilotage et automatisation des appareils connectés depuis une interface unique."
+                data-tags="Tuya, IoT, Domotique, Smart home, Automation"
+              >
+                <div class="card-visual v-iot" aria-hidden="true">
+                  <div class="iot">
+                    <span class="iot-tile iot-tile--bulb"><svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4" /><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z" /></svg></span>
+                    <span class="iot-link"></span>
+                    <span class="iot-tile iot-tile--hub"><svg class="i" viewBox="0 0 24 24"><path d="M1.5 9a15 15 0 0 1 21 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" /><circle cx="12" cy="19.5" r=".9" /></svg></span>
+                    <span class="iot-link"></span>
+                    <span class="iot-tile"><svg class="i" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0V8Z" /><path d="M12 17v5" /></svg></span>
+                  </div>
+                  <span class="v-caption">tuya · smart home</span>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_smart_home">Smart home</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_tuya">Tuya</button></h4>
+                  <p class="card-desc" data-t="p_tuya">Smart-home project built around the Tuya ecosystem.</p>
+                  <ul class="card-tags"><li>IoT</li><li>Smart home</li><li>Automation</li></ul>
                 </div>
               </article>
             </div>
@@ -1013,6 +1237,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
           </div>
           <h2 class="dialog-title" id="dialog-title" data-dialog-title></h2>
           <div class="dialog-desc" data-dialog-summary></div>
+          <ul class="dialog-features" data-dialog-features hidden></ul>
           <div class="dialog-links" data-dialog-links></div>
           <ul class="card-tags dialog-tags" data-dialog-tags></ul>
         </div>
@@ -1033,6 +1258,6 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
       <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
     </button>
 
-    <script src="script.js?v=2026-09-24-1"></script>
+    <script src="script.js?v=2026-09-24-2"></script>
   </body>
 </html>
