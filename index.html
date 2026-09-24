@@ -894,25 +894,42 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
               <article
                 class="card card--sm"
                 data-reveal
-                data-category="game"
+                data-category="game automation"
                 data-title="Roblox Pet Tracker"
-                data-summary="Tracker dédié aux pets Roblox, pensé pour les suivre et les surveiller en un coup d'œil."
-                data-tags="Roblox, Pets, Tracker, Suivi"
+                data-summary="PetRift Tracker : application web compagnon de Pet Rift. Le serveur Roblox synchronise automatiquement l'inventaire des joueurs vers Firebase ; profils publics, pets possédés et manquants, complétion, score de collectionneur, classement, offres d'échange, wishlist, rotation des Huge."
+                data-tags="Roblox, Pet Rift, Luau, Firebase, Cloud Functions, JavaScript, Trading, Collection"
               >
-                <div class="card-visual v-radar" aria-hidden="true">
-                  <div class="radar">
-                    <span class="radar-sweep"></span>
-                    <i style="--x: 64%; --y: 30%"></i>
-                    <i style="--x: 30%; --y: 56%"></i>
-                    <i style="--x: 70%; --y: 70%"></i>
+                <div class="card-visual v-collection" data-dialog="clone" aria-hidden="true">
+                  <div class="collection">
+                    <div class="collection-head"><span>PetRift Tracker</span><span>4 / 6</span></div>
+                    <div class="collection-grid">
+                      <img src="assets/pets/huge_mystic_fox.png" alt="" loading="lazy" decoding="async" />
+                      <img src="assets/pets/huge_royal_crow.png" alt="" loading="lazy" decoding="async" />
+                      <img src="assets/pets/galaxy_cat.png" alt="" loading="lazy" decoding="async" />
+                      <img src="assets/pets/party_phoenix.png" alt="" loading="lazy" decoding="async" />
+                      <img class="is-missing" src="assets/pets/huge_ninja_wolf.png" alt="" loading="lazy" decoding="async" />
+                      <img class="is-missing" src="assets/pets/star_tiger.png" alt="" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="collection-bar"><span></span></div>
                   </div>
-                  <span class="v-caption">Roblox · pets</span>
                 </div>
                 <div class="card-body">
                   <div class="card-meta"><span class="card-type" data-t="type_roblox_tool">Roblox tool</span></div>
                   <h4 class="card-title"><button class="card-open" type="button" data-t="title_pet_tracker">Roblox Pet Tracker</button></h4>
-                  <p class="card-desc" data-t="p_pet_tracker">Dedicated tracker for Roblox pets, built to follow and monitor them at a glance.</p>
-                  <ul class="card-tags"><li>Roblox</li><li>Tracking</li><li>Pets</li></ul>
+                  <p class="card-desc" data-t="p_pet_tracker">Companion web app for Pet Rift, synced automatically from the Roblox game server.</p>
+                  <ul class="card-features">
+                    <li><b data-t="pt_f1_t">Automatic server sync</b><span data-t="pt_f1_d">A Luau script on the Roblox game server pushes player inventories to a Cloud Function protected by a secret key — no spoofing, no Roblox API rate limits.</span></li>
+                    <li><b data-t="pt_f2_t">Public profiles</b><span data-t="pt_f2_d">Search by Roblox username: avatar, owned, missing and total pets, last sync date and completion percentage.</span></li>
+                    <li><b data-t="pt_f3_t">Collection browser</b><span data-t="pt_f3_d">Search, rarity filters (Common to Secret), variants, Huge and Giant pets, duplicate counts.</span></li>
+                    <li><b data-t="pt_f4_t">Collector score & votes</b><span data-t="pt_f4_d">Star-rated collector score and community votes on profiles.</span></li>
+                    <li><b data-t="pt_f5_t">Leaderboard</b><span data-t="pt_f5_d">Top collectors with a podium.</span></li>
+                    <li><b data-t="pt_f6_t">Trade offers</b><span data-t="pt_f6_d">Create, browse and relist trade offers, with automatic expiry.</span></li>
+                    <li><b data-t="pt_f7_t">Wishlist, watchlist & lists</b><span data-t="pt_f7_d">Wishlist, watchlist of missing pets and custom lists.</span></li>
+                    <li><b data-t="pt_f8_t">Huge rotation tracker</b><span data-t="pt_f8_d">Huge pet rotation schedule with a live countdown and next-appearance lookup.</span></li>
+                    <li><b data-t="pt_f9_t">Mailbox helper</b><span data-t="pt_f9_d">Shows which pets a player is missing so they can be sent through the in-game mailbox.</span></li>
+                    <li><b data-t="pt_f10_t">Roblox account linking</b><span data-t="pt_f10_d">Login verified by a one-time code revealed in-game.</span></li>
+                  </ul>
+                  <ul class="card-tags"><li>Roblox</li><li>Luau</li><li>Firebase</li><li>Cloud Functions</li></ul>
                 </div>
               </article>
 

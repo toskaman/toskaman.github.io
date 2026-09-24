@@ -268,7 +268,27 @@
       p_tuya: "Projet domotique autour de l'écosystème Tuya : pilotage et automatisation des appareils connectés depuis une interface unique.",
       type_roblox_tool: "Outil Roblox",
       title_pet_tracker: "Roblox Pet Tracker",
-      p_pet_tracker: "Tracker dédié aux pets Roblox, pensé pour les suivre et les surveiller en un coup d'œil.",
+      p_pet_tracker: "PetRift Tracker, application web compagnon de Pet Rift : le serveur de jeu Roblox pousse automatiquement l'inventaire de chaque joueur vers un backend Firebase sécurisé, et n'importe qui peut consulter une collection — pets possédés et manquants, complétion, variantes — sans aucune mise à jour manuelle.",
+      pt_f1_t: "Synchronisation serveur automatique",
+      pt_f1_d: "Un script Luau côté serveur Roblox pousse l'inventaire des joueurs vers une Cloud Function protégée par clé secrète : pas d'usurpation possible, pas de limite de l'API Roblox.",
+      pt_f2_t: "Profils publics",
+      pt_f2_d: "Recherche par pseudo Roblox : avatar, pets possédés, manquants et total, date de dernière synchro et pourcentage de complétion.",
+      pt_f3_t: "Explorateur de collection",
+      pt_f3_d: "Recherche, filtres par rareté (Common à Secret), variantes, pets Huge et Giant, quantités en double.",
+      pt_f4_t: "Score de collectionneur & votes",
+      pt_f4_d: "Score de collectionneur noté en étoiles et votes de la communauté sur les profils.",
+      pt_f5_t: "Classement",
+      pt_f5_d: "Meilleurs collectionneurs avec podium.",
+      pt_f6_t: "Offres d'échange",
+      pt_f6_d: "Création, consultation et remise en ligne d'offres d'échange, avec expiration automatique.",
+      pt_f7_t: "Wishlist, suivi & listes",
+      pt_f7_d: "Liste de souhaits, suivi des pets manquants et listes personnalisées.",
+      pt_f8_t: "Rotation des Huge",
+      pt_f8_d: "Planning des rotations de pets Huge avec compte à rebours en direct et recherche de la prochaine apparition.",
+      pt_f9_t: "Aide au mailbox",
+      pt_f9_d: "Affiche les pets manquants d'un joueur pour pouvoir les lui envoyer via le mailbox du jeu.",
+      pt_f10_t: "Liaison du compte Roblox",
+      pt_f10_d: "Connexion vérifiée par un code à usage unique révélé en jeu.",
       title_rifty: "Rifty · SnitchersBot",
       p_rifty: "Bot Discord tout-en-un maintenu depuis plus de deux ans, qui réunit la sécurité du serveur et une modération complète avec une vraie couche de jeu : mini-jeux, jeux complets, donjons et boss, échanges entre joueurs, cartes à collectionner et économie de farming — sans oublier des logs en tout genre.",
       rf_sec_t: "Sécurité",
@@ -531,7 +551,27 @@
       p_tuya: "Smart-home project built around the Tuya ecosystem: control and automation of connected devices from a single interface.",
       type_roblox_tool: "Roblox tool",
       title_pet_tracker: "Roblox Pet Tracker",
-      p_pet_tracker: "Dedicated tracker for Roblox pets, built to follow and monitor them at a glance.",
+      p_pet_tracker: "PetRift Tracker, a companion web app for Pet Rift: the Roblox game server automatically pushes each player's inventory to a secured Firebase backend, and anyone can look up a collection — owned and missing pets, completion, variants — with no manual updates.",
+      pt_f1_t: "Automatic server sync",
+      pt_f1_d: "A Luau script on the Roblox game server pushes player inventories to a Cloud Function protected by a secret key — no spoofing, no Roblox API rate limits.",
+      pt_f2_t: "Public profiles",
+      pt_f2_d: "Search by Roblox username: avatar, owned, missing and total pets, last sync date and completion percentage.",
+      pt_f3_t: "Collection browser",
+      pt_f3_d: "Search, rarity filters (Common to Secret), variants, Huge and Giant pets, duplicate counts.",
+      pt_f4_t: "Collector score & votes",
+      pt_f4_d: "Star-rated collector score and community votes on profiles.",
+      pt_f5_t: "Leaderboard",
+      pt_f5_d: "Top collectors with a podium.",
+      pt_f6_t: "Trade offers",
+      pt_f6_d: "Create, browse and relist trade offers, with automatic expiry.",
+      pt_f7_t: "Wishlist, watchlist & lists",
+      pt_f7_d: "Wishlist, watchlist of missing pets and custom lists.",
+      pt_f8_t: "Huge rotation tracker",
+      pt_f8_d: "Huge pet rotation schedule with a live countdown and next-appearance lookup.",
+      pt_f9_t: "Mailbox helper",
+      pt_f9_d: "Shows which pets a player is missing so they can be sent through the in-game mailbox.",
+      pt_f10_t: "Roblox account linking",
+      pt_f10_d: "Login verified by a one-time code revealed in-game.",
       title_rifty: "Rifty · SnitchersBot",
       p_rifty: "All-in-one Discord bot maintained for over two years, combining server security and full moderation with a complete game layer: mini-games, full games, dungeons and bosses, player trading, collectible cards and a farming economy — plus logs of every kind.",
       rf_sec_t: "Security",
@@ -1030,7 +1070,9 @@
 
   function buildDialogMedia(card) {
     dialogMedia.replaceChildren();
-    gallery = $$(".card-visual img", card).map((img) => ({ src: img.currentSrc || img.src, alt: img.alt }));
+    const visual = $(".card-visual", card);
+    const useClone = visual?.dataset.dialog === "clone";
+    gallery = useClone ? [] : $$("img", visual ?? card).map((img) => ({ src: img.currentSrc || img.src, alt: img.alt }));
     galleryIndex = 0;
 
     if (!gallery.length) {

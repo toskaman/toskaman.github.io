@@ -2577,57 +2577,87 @@ html:not(.js) .filter.is-active {
   grid-auto-rows: 92px;
 }
 
-/* Radar (Roblox Pet Tracker) */
-.v-radar {
+/* Collection preview (Roblox Pet Tracker) */
+.v-collection {
   display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 14px;
+  place-items: center;
+  padding: 22px;
 }
 
-.radar {
+.collection {
   position: relative;
-  width: 144px;
-  aspect-ratio: 1;
-  overflow: hidden;
+  display: grid;
+  gap: 10px;
+  width: min(100%, 196px);
+  padding: 12px;
   border: 1px solid var(--line-2);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, transparent 0 23px, var(--line) 23px 24px, transparent 24px 47px, var(--line) 47px 48px, transparent 48px),
-    linear-gradient(var(--line), var(--line)) center / 1px 100% no-repeat,
-    linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat,
-    var(--surface);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 26px 50px -26px rgba(0, 0, 0, 0.7);
 }
 
-.radar-sweep {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, color-mix(in srgb, var(--accent) 38%, transparent), transparent 22%);
-  animation: radar 4s linear infinite;
-  animation-play-state: paused;
+.collection-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.card:hover .radar-sweep {
-  animation-play-state: running;
+.collection-head span:last-child {
+  color: var(--ink);
 }
 
-.radar i {
-  position: absolute;
-  top: var(--y);
-  left: var(--x);
-  width: 7px;
-  height: 7px;
-  margin: -3.5px 0 0 -3.5px;
-  border-radius: 50%;
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.collection-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.collection-grid img.is-missing {
+  filter: grayscale(1) brightness(0.45);
+  opacity: 0.55;
+}
+
+.card:hover .collection-grid img.is-missing {
+  filter: grayscale(1) brightness(0.6);
+}
+
+.collection-bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+
+.collection-bar span {
+  display: block;
+  width: 66.7%;
+  height: 100%;
+  border-radius: inherit;
   background: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  transform-origin: left center;
+  transition: transform 1.2s var(--ease-out) 0.2s;
 }
 
-@keyframes radar {
-  to {
-    transform: rotate(1turn);
-  }
+.js .card:not(.is-visible) .collection-bar span {
+  transform: scaleX(0);
+}
+
+.dialog-media .collection {
+  width: min(100%, 340px);
 }
 
 /* Connected devices (Tuya) */
