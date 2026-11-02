@@ -1711,7 +1711,7 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             <div class="group-head" data-reveal>
               <span class="group-index">D</span>
               <h3 class="group-title" data-t="group_games">Games &amp; Automation</h3>
-              <span class="group-count" data-group-count>11</span>
+              <span class="group-count" data-group-count>12</span>
             </div>
             <div class="work-grid">
 <!-- ==========================================================================
@@ -1989,6 +1989,447 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
     </ul>
   </div>
 </article>
+
+<!-- ─── Luna Bay (RoCrossing) Flagship Game Card ─── -->
+<article
+  class="card card--full"
+  data-reveal
+  data-category="game desktop"
+  data-title="Luna Bay — Island Life Simulation Engine"
+  data-summary="Moteur de simulation de vie insulaire cosy 100% original développé en Luau strict sur Roblox : terrain voxel à 4 paliers d'élévation (128×96), physique de vent vectorielle à 20Hz via BulkMoveTo, rig procédural à 6 articulations Motor6D et 16 démarches physiques, cycle céleste 24h temps réel avec réinitialisation à 05h00, et serveurs réservés multi-îles coordonnés par MemoryStoreSortedMap via Crossing Codes à 5 caractères."
+  data-tags="Roblox, Luau Strict, Island Simulation, Custom Engine, Procedural Animation, Multiplayer, Original IP"
+>
+  <div class="card-visual v-lunabay" aria-hidden="true" data-dialog="clone">
+    <div class="lunabay-stage">
+      <!-- Top HUD Header -->
+      <div class="lb-head">
+        <div class="lb-brand">
+          <span class="lb-brand-icon">
+            <svg viewBox="0 0 24 24" class="lb-svg-icon" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
+            </svg>
+          </span>
+          <div class="lb-brand-text">
+            <span class="lb-brand-name" data-t="lb_v_title">Luna Bay · RoCrossing</span>
+            <span class="lb-brand-sub" data-t="lb_v_engine">Custom Simulation Engine</span>
+          </div>
+        </div>
+
+        <div class="lb-pills">
+          <!-- Day/Night Live Indicator -->
+          <div class="lb-pill lb-pill--time" title="24-Hour Real-Time Celestial Lighting">
+            <span class="lb-pill-icon lb-pulse-celestial">
+              <svg viewBox="0 0 20 20" class="lb-svg-sm" aria-hidden="true">
+                <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                <path d="M10 2v2m0 12v2M2 10h2m12 10h2m-2.93-9.07 1.41-1.41M5.52 14.48l1.41-1.41m0-6.14-1.41-1.41m9.9 9.9-1.41-1.41" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="lb-pill-label" data-t="lb_v_time">24H Live · 05:00 AM Reset</span>
+          </div>
+
+          <!-- Wind Physics Engine Indicator -->
+          <div class="lb-pill lb-pill--wind" title="Dynamic Foliage BulkMoveTo Vector Field">
+            <span class="lb-pill-icon lb-spin-slow">
+              <svg viewBox="0 0 24 24" class="lb-svg-sm" aria-hidden="true">
+                <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="lb-pill-label" data-t="lb_v_wind">20Hz · 14.2 kn SW</span>
+          </div>
+
+          <!-- Crossing Code Badge -->
+          <div class="lb-pill lb-pill--code" title="MemoryStore Global Island Crossing Code">
+            <span class="lb-code-prefix" data-t="lb_v_code_prefix">CODE</span>
+            <strong class="lb-code-val">LUNA9</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diorama Canvas & Stylized Isometric Island Grid -->
+      <div class="lb-canvas">
+        <svg class="lb-diorama" viewBox="0 0 520 280" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <!-- Atmospheric Glow Filters -->
+            <filter id="lbMoonGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="4" result="blur1" />
+              <feGaussianBlur stdDeviation="9" result="blur2" />
+              <feMerge>
+                <feMergeNode in="blur2" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <filter id="lbWaterShimmer" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="1.2" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+
+            <!-- Sky Horizon Twilight Gradient -->
+            <linearGradient id="lbSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#141e30" stop-opacity="0.9" />
+              <stop offset="35%" stop-color="#243b55" stop-opacity="0.8" />
+              <stop offset="70%" stop-color="#3d5a73" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#60819c" stop-opacity="0.3" />
+            </linearGradient>
+
+            <!-- Ocean Water Gradients -->
+            <linearGradient id="lbOceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2a5270" />
+              <stop offset="50%" stop-color="#387494" />
+              <stop offset="100%" stop-color="#4e97b8" />
+            </linearGradient>
+
+            <linearGradient id="lbShallowsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#67b2c9" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#a5e1eb" stop-opacity="0.9" />
+            </linearGradient>
+
+            <!-- Stepped Elevation Grass Gradients (4 Tiers) -->
+            <linearGradient id="lbTier1Grass" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8bb992" />
+              <stop offset="100%" stop-color="#73a27a" />
+            </linearGradient>
+
+            <linearGradient id="lbTier2Grass" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#73a27a" />
+              <stop offset="100%" stop-color="#5f8c66" />
+            </linearGradient>
+
+            <linearGradient id="lbTier3Grass" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5f8c66" />
+              <stop offset="100%" stop-color="#4d7754" />
+            </linearGradient>
+
+            <linearGradient id="lbTier4Grass" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4d7754" />
+              <stop offset="100%" stop-color="#3e6244" />
+            </linearGradient>
+
+            <!-- Cliff Facade Gradient -->
+            <linearGradient id="lbCliffGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#c9baaa" />
+              <stop offset="50%" stop-color="#ab9986" />
+              <stop offset="100%" stop-color="#8c7a68" />
+            </linearGradient>
+
+            <linearGradient id="lbRiverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#99e2ee" />
+              <stop offset="100%" stop-color="#5bb5ce" />
+            </linearGradient>
+
+            <!-- Moon Fountain Radiance -->
+            <radialGradient id="lbMoonBeam" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fff8db" stop-opacity="1" />
+              <stop offset="40%" stop-color="#e2f5af" stop-opacity="0.7" />
+              <stop offset="75%" stop-color="#84dcda" stop-opacity="0.3" />
+              <stop offset="100%" stop-color="#84dcda" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+
+          <!-- Sky Backdrop & Ambient Constellations -->
+          <rect x="0" y="0" width="520" height="280" fill="url(#lbSkyGrad)" rx="8" />
+
+          <g class="lb-stars" fill="#fff" opacity="0.6">
+            <circle cx="45" cy="30" r="1" />
+            <circle cx="85" cy="65" r="0.8" />
+            <circle cx="140" cy="22" r="1.2" />
+            <circle cx="190" cy="45" r="0.7" />
+            <circle cx="260" cy="20" r="1" />
+            <circle cx="330" cy="38" r="0.8" />
+            <circle cx="390" cy="18" r="1.3" />
+            <circle cx="470" cy="32" r="0.9" />
+            <circle cx="500" cy="60" r="1.1" />
+          </g>
+
+          <!-- Drifting Clouds in Horizon -->
+          <g class="lb-clouds" fill="#ffffff" fill-opacity="0.14">
+            <path class="lb-cloud-1" d="M30 50 a12 12 0 0 1 20 -4 a16 16 0 0 1 28 2 a10 10 0 0 1 12 10 h-60 z" />
+            <path class="lb-cloud-2" d="M360 40 a14 14 0 0 1 24 -5 a18 18 0 0 1 32 3 a12 12 0 0 1 14 12 h-70 z" />
+          </g>
+
+          <!-- Tier 0: Deep Ocean & Animated Shallows -->
+          <path class="lb-ocean" d="M0 120 Q130 115 260 125 T520 120 L520 280 L0 280 Z" fill="url(#lbOceanGrad)" />
+
+          <!-- Ocean Surf & Wave Ripple Currents -->
+          <g class="lb-waves" stroke="#bdf1f6" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.55">
+            <path class="lb-wave lb-wave-1" d="M20 170 Q70 165 120 170 T220 170" />
+            <path class="lb-wave lb-wave-2" d="M340 160 Q400 155 460 160 T510 162" />
+            <path class="lb-wave lb-wave-3" d="M40 240 Q110 235 180 240 T300 238" />
+            <path class="lb-wave lb-wave-4" d="M260 260 Q340 255 420 260 T490 258" />
+          </g>
+
+          <!-- Sandy Coastline & Estuary Beach (Tier 0 Shore) -->
+          <path class="lb-beach" d="M40 185 Q110 145 220 155 Q255 158 275 170 Q300 185 320 180 Q390 165 480 185 L490 235 Q410 245 320 235 Q280 230 250 240 Q210 250 140 240 Q70 230 40 205 Z" fill="#faeed4" stroke="#e8d8b5" stroke-width="1.5" />
+
+          <!-- Estuary Riverbed cutting through sand into ocean -->
+          <path class="lb-estuary" d="M260 160 C265 180 250 200 255 225 C258 238 270 245 275 255 L295 252 C290 240 278 230 275 218 C270 195 285 178 280 160 Z" fill="url(#lbShallowsGrad)" />
+
+          <!-- ═════ TIER 1: Lowland Plateau (128x96 Voxel Base) ═════ -->
+          <!-- Tier 1 Cliff Edge -->
+          <path class="lb-cliff-1" d="M60 185 L60 172 Q180 140 260 152 Q340 140 460 172 L460 185 Q340 155 260 165 Q180 155 60 185 Z" fill="url(#lbCliffGrad)" stroke="#7a6956" stroke-width="1" />
+          <!-- Tier 1 Grass Plateau -->
+          <path class="lb-tier-1" d="M60 172 Q150 135 250 145 Q350 135 460 172 Q430 195 350 190 Q290 205 230 195 Q150 205 60 172 Z" fill="url(#lbTier1Grass)" stroke="#4d7455" stroke-width="1.2" />
+
+          <!-- Tier 1 Voxel Elevation Grid Guidelines (Subtle) -->
+          <g class="lb-voxel-grid" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.8" stroke-dasharray="3 3">
+            <line x1="120" y1="160" x2="200" y2="185" />
+            <line x1="160" y1="152" x2="240" y2="178" />
+            <line x1="280" y1="178" x2="360" y2="152" />
+            <line x1="320" y1="185" x2="400" y2="160" />
+          </g>
+
+          <!-- Cozy Island House / Cottage on Tier 1 (Left Coast) -->
+          <g class="lb-cottage" transform="translate(100, 140)">
+            <!-- Shadow -->
+            <ellipse cx="22" cy="28" rx="20" ry="6" fill="#2d4532" opacity="0.3" />
+            <!-- Walls -->
+            <rect x="6" y="8" width="32" height="20" rx="3" fill="#fdfcf7" stroke="#e0d5c1" stroke-width="1.2" />
+            <!-- Door -->
+            <rect x="18" y="16" width="8" height="12" rx="1.5" fill="#a47148" />
+            <circle cx="24" cy="22" r="1" fill="#fef08a" />
+            <!-- Window -->
+            <rect x="9" y="13" width="6" height="6" rx="1" fill="#bae6fd" stroke="#7dd3fc" stroke-width="0.8" />
+            <!-- Cozy Peach Roof -->
+            <polygon points="4,9 22,-4 40,9" fill="#f87171" stroke="#dc2626" stroke-width="1" />
+            <polygon points="22,-4 40,9 36,9 22,-1" fill="#ef4444" opacity="0.6" />
+            <!-- Chimney & Smoke -->
+            <rect x="28" y="-2" width="4" height="6" fill="#c2410c" />
+            <circle class="lb-smoke lb-smoke-1" cx="30" cy="-6" r="2" fill="#fff" opacity="0.5" />
+            <circle class="lb-smoke lb-smoke-2" cx="32" cy="-11" r="2.8" fill="#fff" opacity="0.35" />
+          </g>
+
+          <!-- ═════ TIER 2: Mid-Elevation Forest Plateau ═════ -->
+          <!-- Tier 2 Cliff Edge -->
+          <path class="lb-cliff-2" d="M120 148 L120 132 Q230 112 320 120 Q400 115 420 140 L420 152 Q400 128 320 132 Q230 124 120 148 Z" fill="url(#lbCliffGrad)" stroke="#7a6956" stroke-width="1" />
+          <!-- Tier 2 Grass Surface -->
+          <path class="lb-tier-2" d="M120 132 Q210 108 300 118 Q380 110 420 140 Q370 158 310 150 Q220 158 120 132 Z" fill="url(#lbTier2Grass)" stroke="#3e6244" stroke-width="1.2" />
+
+          <!-- River Winding from Summit through Tier 2 to Tier 1 Estuary -->
+          <path class="lb-river" d="M295 98 C285 112 290 125 282 138 C276 148 268 152 268 162" fill="none" stroke="url(#lbRiverGrad)" stroke-width="7" stroke-linecap="round" />
+
+          <!-- Wooden Log Bridge across Tier 2 River -->
+          <g class="lb-bridge" transform="translate(268, 128)">
+            <rect x="-8" y="-3" width="22" height="7" rx="2" fill="#92400e" stroke="#78350f" stroke-width="1" transform="rotate(-15)" />
+            <line x1="-6" y1="-2" x2="12" y2="-2" stroke="#d97706" stroke-width="0.8" transform="rotate(-15)" stroke-dasharray="2 2" />
+          </g>
+
+          <!-- ═════ TIER 3 & 4: High Summit & Cascading Waterfall ═════ -->
+          <!-- Tier 3 Cliff Facade -->
+          <path class="lb-cliff-3" d="M180 115 L180 96 Q260 80 340 88 Q375 88 385 110 L385 122 Q375 100 340 100 Q260 92 180 115 Z" fill="url(#lbCliffGrad)" stroke="#685542" stroke-width="1" />
+          <!-- Waterfall Cutout on Tier 3 Cliff -->
+          <g class="lb-waterfall-group">
+            <rect class="lb-waterfall" x="290" y="86" width="10" height="22" rx="2" fill="#e0f2fe" opacity="0.9" filter="url(#lbWaterShimmer)" />
+            <line class="lb-waterfall-flow" x1="293" y1="87" x2="293" y2="107" stroke="#7dd3fc" stroke-width="1.5" stroke-dasharray="3 2" />
+            <line class="lb-waterfall-flow" x1="297" y1="87" x2="297" y2="107" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 3" />
+            <!-- Foam Mist at base of waterfall -->
+            <ellipse class="lb-water-mist" cx="295" cy="108" rx="8" ry="3" fill="#ffffff" opacity="0.75" />
+          </g>
+
+          <!-- Tier 3 Grass Plateau -->
+          <path class="lb-tier-3" d="M180 96 Q255 76 330 84 Q365 82 385 110 Q345 120 290 115 Q230 122 180 96 Z" fill="url(#lbTier3Grass)" stroke="#2f4e35" stroke-width="1.2" />
+
+          <!-- Tier 4 Summit Sanctuary (The Moon Peak) -->
+          <ellipse cx="255" cy="80" rx="42" ry="18" fill="url(#lbTier4Grass)" stroke="#233a28" stroke-width="1.2" />
+
+          <!-- ═════ THE SACRED MOON FOUNTAIN (Centerpiece) ═════ -->
+          <g class="lb-moon-fountain" transform="translate(255, 78)">
+            <!-- Radiant Aura -->
+            <circle class="lb-fountain-aura" cx="0" cy="-6" r="32" fill="url(#lbMoonBeam)" filter="url(#lbMoonGlow)" />
+
+            <!-- Expanding Water Ripple Waves -->
+            <ellipse class="lb-ripple lb-ripple-1" cx="0" cy="4" rx="24" ry="9" fill="none" stroke="#67e8f9" stroke-width="1.4" opacity="0.6" />
+            <ellipse class="lb-ripple lb-ripple-2" cx="0" cy="4" rx="30" ry="12" fill="none" stroke="#a5f3fc" stroke-width="1" opacity="0.35" />
+
+            <!-- Stone Basin Base -->
+            <ellipse cx="0" cy="4" rx="18" ry="7" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.2" />
+            <ellipse cx="0" cy="3" rx="15" ry="5.5" fill="#38bdf8" />
+            <!-- Basin Pedestal Column -->
+            <path d="M-6 2 L-4 -8 L4 -8 L6 2 Z" fill="#9ca3af" stroke="#6b7280" stroke-width="1" />
+            <!-- Crescent Moon Idol atop Fountain -->
+            <path class="lb-fountain-moon" d="M-2 -22 A 10 10 0 0 0 8 -9 A 8 8 0 1 1 -2 -22 Z" fill="#fef08a" stroke="#fde047" stroke-width="1.2" filter="url(#lbMoonGlow)" />
+            <!-- Sparkles around Moon Idol -->
+            <polygon class="lb-sparkle lb-sparkle-1" points="11,-24 12,-20 16,-19 12,-18 11,-14 10,-18 6,-19 10,-20" fill="#fff" />
+            <polygon class="lb-sparkle lb-sparkle-2" points="-10,-14 -9,-11 -6,-10 -9,-9 -10,-6 -11,-9 -14,-10 -11,-11" fill="#fff" />
+          </g>
+
+          <!-- ═════ PROCEDURAL FOLIAGE (Wind-Swayed BulkMoveTo) ═════ -->
+          <!-- Palm Tree on Coast Beach -->
+          <g class="lb-foliage lb-palm" transform="translate(70, 205)">
+            <ellipse cx="0" cy="4" rx="8" ry="3" fill="#332a1f" opacity="0.25" />
+            <path d="M0 4 Q6 -12 2 -26" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round" />
+            <g class="lb-palm-fronds">
+              <path d="M2 -26 Q-12 -32 -18 -26" fill="none" stroke="#15803d" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M2 -26 Q-4 -38 2 -42" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M2 -26 Q16 -36 22 -28" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M2 -26 Q12 -22 18 -18" fill="none" stroke="#15803d" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+          </g>
+
+          <!-- Apple Fruit Tree on Tier 1 -->
+          <g class="lb-foliage lb-tree-1" transform="translate(195, 175)">
+            <ellipse cx="0" cy="3" rx="10" ry="4" fill="#2d4532" opacity="0.3" />
+            <rect x="-2.5" y="-8" width="5" height="11" fill="#78350f" rx="1" />
+            <!-- Canopy -->
+            <circle class="lb-canopy" cx="0" cy="-18" r="14" fill="#4ade80" stroke="#16a34a" stroke-width="1.2" />
+            <!-- Apples -->
+            <circle cx="-5" cy="-20" r="2.2" fill="#ef4444" />
+            <circle cx="5" cy="-16" r="2.2" fill="#ef4444" />
+            <circle cx="0" cy="-12" r="2.2" fill="#ef4444" />
+          </g>
+
+          <!-- Cedar / Pine Tree on Tier 2 -->
+          <g class="lb-foliage lb-pine" transform="translate(365, 130)">
+            <ellipse cx="0" cy="2" rx="9" ry="3.5" fill="#1e3422" opacity="0.3" />
+            <rect x="-2" y="-5" width="4" height="7" fill="#582b13" />
+            <!-- Tiered Pine Foliage -->
+            <polygon class="lb-pine-tier lb-pine-b" points="0,-32 -14,-14 14,-14" fill="#15803d" />
+            <polygon class="lb-pine-tier lb-pine-m" points="0,-38 -12,-22 12,-22" fill="#16a34a" />
+            <polygon class="lb-pine-tier lb-pine-t" points="0,-44 -9,-30 9,-30" fill="#22c55e" />
+          </g>
+
+          <!-- Flowering Hydrangea Bush on Tier 1 -->
+          <g class="lb-foliage lb-bush" transform="translate(370, 180)">
+            <ellipse cx="0" cy="0" rx="11" ry="7" fill="#86efac" stroke="#22c55e" stroke-width="1" />
+            <circle cx="-4" cy="-2" r="2" fill="#f472b6" />
+            <circle cx="3" cy="-3" r="2" fill="#a78bfa" />
+            <circle cx="0" cy="1" r="2" fill="#60a5fa" />
+          </g>
+
+          <!-- ═════ PROCEDURAL CHARACTER RIG MARKER (6-DOF) ═════ -->
+          <g class="lb-character" transform="translate(232, 176)">
+            <!-- Shadow -->
+            <ellipse cx="0" cy="4" rx="7" ry="2.5" fill="#1b2e21" opacity="0.4" />
+            <!-- Legs (Joints 1 & 2) -->
+            <line class="lb-leg-l" x1="-2" y1="0" x2="-3" y2="4" stroke="#1e293b" stroke-width="2" stroke-linecap="round" />
+            <line class="lb-leg-r" x1="2" y1="0" x2="3" y2="4" stroke="#1e293b" stroke-width="2" stroke-linecap="round" />
+            <!-- Torso (Joint 3 - Root) -->
+            <rect x="-4.5" y="-9" width="9" height="9" rx="2" fill="#0284c7" stroke="#0369a1" stroke-width="0.8" />
+            <!-- Arms & Net (Joints 4 & 5) -->
+            <line class="lb-arm-l" x1="-4" y1="-7" x2="-8" y2="-3" stroke="#fed7aa" stroke-width="1.8" stroke-linecap="round" />
+            <line class="lb-arm-r" x1="4" y1="-7" x2="8" y2="-12" stroke="#fed7aa" stroke-width="1.8" stroke-linecap="round" />
+            <!-- Bug Catching Net -->
+            <line x1="8" y1="-12" x2="16" y2="-18" stroke="#a16207" stroke-width="1.5" stroke-linecap="round" />
+            <ellipse cx="17" cy="-19" rx="5" ry="3.5" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="1.5 1.5" transform="rotate(-30 17 -19)" />
+            <!-- Head & Hat (Joint 6 - Neck/Head) -->
+            <circle cx="0" cy="-13" r="4.5" fill="#fed7aa" />
+            <path d="M-6 -14 Q0 -20 6 -14 Z" fill="#eab308" stroke="#ca8a04" stroke-width="0.8" />
+            <!-- Procedural Rig HUD Tag -->
+            <g class="lb-rig-hud" transform="translate(18, -10)">
+              <rect x="0" y="-8" width="56" height="14" rx="3" fill="var(--surface, #18181b)" stroke="#38bdf8" stroke-width="0.8" opacity="0.92" />
+              <text x="5" y="2" fill="#38bdf8" font-size="7.5" font-family="var(--font-mono, monospace)" font-weight="600">6-DOF RIG</text>
+            </g>
+          </g>
+
+          <!-- ═════ DYNAMIC 20HZ VECTOR WIND FIELD (Animated) ═════ -->
+          <g class="lb-wind-vectors" stroke="#a7f3d0" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.4">
+            <path class="lb-wind-stream lb-stream-1" d="M10 110 C80 90 140 120 220 95 C280 75 350 110 430 90 C470 80 500 85 520 80" stroke-dasharray="8 8" />
+            <path class="lb-wind-stream lb-stream-2" d="M30 160 C100 135 180 165 260 145 C320 130 400 155 480 135" stroke-dasharray="6 6" />
+            <path class="lb-wind-stream lb-stream-3" d="M80 220 C150 195 240 225 320 200 C390 180 440 210 510 190" stroke-dasharray="7 7" />
+          </g>
+
+          <!-- Drifting Foliage Leaves along Wind Currents -->
+          <g class="lb-flying-leaves">
+            <path class="lb-leaf lb-leaf-1" d="M0 0 C2 -3 5 -2 6 0 C5 3 2 3 0 0 Z" fill="#86efac" />
+            <path class="lb-leaf lb-leaf-2" d="M0 0 C2 -3 5 -2 6 0 C5 3 2 3 0 0 Z" fill="#fbcfe8" />
+            <path class="lb-leaf lb-leaf-3" d="M0 0 C2 -3 5 -2 6 0 C5 3 2 3 0 0 Z" fill="#fde047" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Bottom HUD Telemetry Strip -->
+      <div class="lb-foot">
+        <div class="lb-telemetry-item">
+          <i class="lb-dot lb-dot--sage"></i>
+          <span data-t="lb_v_grid">128×96 Voxel Grid (4 Tiers)</span>
+        </div>
+        <div class="lb-telemetry-item">
+          <i class="lb-dot lb-dot--pulse"></i>
+          <span data-t="lb_v_mstore">MemoryStore SortedMap Active</span>
+        </div>
+        <div class="lb-telemetry-item">
+          <span class="lb-badge-strict">--!strict</span>
+          <span data-t="lb_v_luau">Luau Custom Engine</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="card-type" data-t="type_game">Roblox Game</span>
+      <span class="badge badge--soft">Place ID: 101873866819894</span>
+    </div>
+
+    <h4 class="card-title">
+      <button class="card-open" type="button" data-t="title_lunabay">Luna Bay — Island Life Simulation Engine</button>
+    </h4>
+
+    <p class="card-desc" data-t="p_lunabay">
+      Moteur de simulation de vie insulaire cosy 100% original conçu en Luau strict sur Roblox. Terrain voxel procédural à 4 paliers d'élévation (grille 128×96, cascades, estuaires et sommet de la Fontaine Lunaire), physique de vent vectorielle à 20Hz via BulkMoveTo, rig procédural 6 articulations avec 16 démarches physiques, cycle céleste 24h temps réel avec réinitialisation à 05h00, et serveurs réservés multi-îles coordonnés par MemoryStoreSortedMap via Crossing Codes à 5 caractères.
+    </p>
+
+    <div class="card-links">
+      <a class="card-link" href="https://www.roblox.com/games/101873866819894" target="_blank" rel="noopener">
+        <span data-t="link_lunabay_roblox">Jouer sur Roblox (Place ID: 101873866819894)</span>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+    </div>
+
+    <dl class="card-stats">
+      <div><dt data-t="lb_stat_grid">grille voxel</dt><dd>128 × 96</dd></div>
+      <div><dt data-t="lb_stat_physics">physique vent</dt><dd>20 Hz</dd></div>
+      <div><dt data-t="lb_stat_locomotion">rig locomotion</dt><dd>6-DOF · 16 gestes</dd></div>
+      <div><dt data-t="lb_stat_typecheck">typage luau</dt><dd>--!strict 100%</dd></div>
+    </dl>
+
+    <ul class="card-features">
+      <li>
+        <strong data-t="lb_f1_t">Grille d'Élévation Voxel à Paliers</strong>
+        <span data-t="lb_f1_d">Architecture de terrain 128×96 sur 4 paliers d'élévation discrets avec falaises procédurales, rampes naturelles, estuaires marins, cascades et sanctuaire de la Fontaine Lunaire.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f2_t">Physique de Vent Vectorielle 20Hz</strong>
+        <span data-t="lb_f2_d">Champ vectoriel haute fréquence actualisant simultanément des centaines d'instances végétales via BulkMoveTo sans coût de désynchronisation physique ni instabilité réseau.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f3_t">Rig de Locomotion Procédurale (6-DOF)</strong>
+        <span data-t="lb_f3_d">Solveur squelettique Motor6D sur mesure intégrant 16 démarches dynamiques réactives (pente, sprint, nage en haute mer, sauvetage sur berge) avec ajustement automatique des appuis.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f4_t">Cycle Céleste 24h &amp; Éclairage Temps Réel</strong>
+        <span data-t="lb_f4_d">Progression solaire et lunaire calquée sur l'heure réelle avec diffusion atmosphérique personnalisée, ombres dynamiques et rituel de réinitialisation quotidienne à 05h00.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f5_t">Serveurs Réservés Dédiés par Île</strong>
+        <span data-t="lb_f5_d">Allocation d'instances isolées Roblox ReservedServers par île joueur garantissant des cadences stables à 60 FPS et une persistance d'inventaire locale intègre.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f6_t">Crossing Codes &amp; Matchmaking MemoryStore</strong>
+        <span data-t="lb_f6_d">Réseau de voyage multijoueur mondial articulé sur MemoryStoreSortedMap avec codes de traversée à 5 caractères, files d'attente à faible latence et transit instantané.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f7_t">Pipeline Rojo &amp; Luau Strict Intégral</strong>
+        <span data-t="lb_f7_d">Codebase développée à 100% en mode strict (--!strict) sous flux Git/Rojo, sans typage implicite ni warning d'analyseur, garantissant robustesse et modularité industrielle.</span>
+      </li>
+      <li>
+        <strong data-t="lb_f8_t">Propriété Intellectuelle 100% Originale</strong>
+        <span data-t="lb_f8_d">Univers cosy inspiré des plus grands classiques du genre, avec direction artistique pastel sur mesure, environnement sonore organique et zéro asset tiers non autorisé.</span>
+      </li>
+    </ul>
+
+    <ul class="card-tags">
+      <li>Roblox</li>
+      <li>Luau Strict</li>
+      <li>Island Simulation</li>
+      <li>Custom Engine</li>
+      <li>Procedural Animation</li>
+      <li>Multiplayer</li>
+      <li>Original IP</li>
+    </ul>
+  </div>
+</article>
+
               <article
                 class="card card--xl"
                 data-reveal

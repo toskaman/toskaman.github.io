@@ -5485,3 +5485,623 @@ html:not(.js) .filter.is-active {
   gap: 12px;
   flex-shrink: 0;
 }
+
+
+/* ==========================================================================
+   Luna Bay (RoCrossing) Visuals & Styles
+   ========================================================================== */
+/* ==========================================================================
+   Luna Bay (RoCrossing) — Island Life Simulation Engine Component
+   Cozy pastel aesthetic, dynamic wind physics, 4-tier voxel elevation grid,
+   procedural 6-DOF locomotion rig, and real-time celestial lighting.
+   ========================================================================== */
+
+:root {
+  --lb-sage: #8eb897;
+  --lb-sage-light: #b4d8bc;
+  --lb-sage-deep: #4d7754;
+  --lb-sky-soft: #bae6fd;
+  --lb-ocean-surf: #67b2c9;
+  --lb-moon-gold: #fef08a;
+  --lb-moon-glow: rgba(254, 240, 138, 0.45);
+  --lb-peach-soft: #fca5a5;
+  --lb-cream: #fbf7ee;
+}
+
+/* --------------------------------------------------------------------------
+   Soft Pastel Badge (.badge--soft)
+   -------------------------------------------------------------------------- */
+.badge--soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: color-mix(in srgb, #8eb897 16%, var(--surface-2, #27272a));
+  border: 1px solid color-mix(in srgb, #8eb897 38%, var(--line-2, #3f3f46));
+  color: #8eb897;
+  box-shadow: 0 2px 8px -2px rgba(142, 184, 151, 0.2);
+  transition: all 0.2s ease;
+}
+
+.badge--soft:hover {
+  background: color-mix(in srgb, #8eb897 26%, var(--surface-2, #27272a));
+  border-color: #8eb897;
+  color: #b4d8bc;
+  box-shadow: 0 4px 14px -3px rgba(142, 184, 151, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Luna Bay Visual Card Stage (.v-lunabay)
+   -------------------------------------------------------------------------- */
+.v-lunabay {
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 2.2vw, 22px);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.lunabay-stage {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(100%, 520px);
+  height: 100%;
+  max-height: 290px;
+  border: 1px solid color-mix(in srgb, #8eb897 32%, var(--line-2, #27272a));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface, #18181b) 92%, #8eb897 8%);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.72),
+              0 0 32px -12px rgba(142, 184, 151, 0.28);
+  font-family: var(--font-mono, monospace);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover .lunabay-stage {
+  border-color: color-mix(in srgb, #8eb897 55%, var(--line-2, #27272a));
+  box-shadow: 0 28px 56px -20px rgba(0, 0, 0, 0.8),
+              0 0 40px -10px rgba(142, 184, 151, 0.4);
+}
+
+/* Top Header & Bottom Footer Bars */
+.lb-head,
+.lb-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 14px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3, #71717a);
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.lb-head {
+  border-bottom: 1px solid color-mix(in srgb, var(--line, #27272a) 80%, #8eb897 20%);
+  background: color-mix(in srgb, var(--surface, #18181b) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.lb-foot {
+  border-top: 1px solid color-mix(in srgb, var(--line, #27272a) 80%, #8eb897 20%);
+  background: color-mix(in srgb, var(--surface, #18181b) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+/* Brand Display */
+.lb-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lb-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: color-mix(in srgb, #8eb897 20%, transparent);
+  color: #8eb897;
+  border: 1px solid color-mix(in srgb, #8eb897 35%, transparent);
+}
+
+.lb-svg-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.lb-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lb-brand-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink, #fafafa);
+  letter-spacing: 0.02em;
+}
+
+.lb-brand-sub {
+  font-size: 8.5px;
+  color: #8eb897;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Top HUD Pills */
+.lb-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  font-size: 9.5px;
+  border: 1px solid var(--line-2, #3f3f46);
+  background: color-mix(in srgb, var(--surface-2, #27272a) 85%, transparent);
+  color: var(--ink-2, #a1a1aa);
+  white-space: nowrap;
+}
+
+.lb-pill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-svg-sm {
+  width: 11px;
+  height: 11px;
+}
+
+.lb-pill--time {
+  border-color: color-mix(in srgb, #fde047 30%, var(--line-2, #3f3f46));
+  color: #fef08a;
+}
+
+.lb-pill--wind {
+  border-color: color-mix(in srgb, #86efac 30%, var(--line-2, #3f3f46));
+  color: #86efac;
+}
+
+.lb-pill--code {
+  border-color: color-mix(in srgb, #38bdf8 35%, var(--line-2, #3f3f46));
+  background: color-mix(in srgb, #38bdf8 12%, var(--surface-2, #27272a));
+  color: #7dd3fc;
+}
+
+.lb-code-prefix {
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+.lb-code-val {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Diorama Canvas Stage
+   -------------------------------------------------------------------------- */
+.lb-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #111a24;
+}
+
+.lb-diorama {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Foliage, Wind & Celestial Keyframe Animations
+   -------------------------------------------------------------------------- */
+
+/* Wind Vectors Animation */
+.lb-wind-stream {
+  animation: lb-wind-flow 3.5s linear infinite;
+}
+
+.lb-stream-1 { animation-duration: 3.2s; }
+.lb-stream-2 { animation-duration: 4.0s; animation-delay: 0.8s; }
+.lb-stream-3 { animation-duration: 3.6s; animation-delay: 1.4s; }
+
+@keyframes lb-wind-flow {
+  0% {
+    stroke-dashoffset: 48;
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.15;
+  }
+}
+
+/* Flying Leaf Particles */
+.lb-leaf-1 {
+  animation: lb-leaf-path-1 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.lb-leaf-2 {
+  animation: lb-leaf-path-2 6.2s cubic-bezier(0.4, 0, 0.2, 1) 1.5s infinite;
+}
+
+.lb-leaf-3 {
+  animation: lb-leaf-path-3 5.6s cubic-bezier(0.4, 0, 0.2, 1) 3s infinite;
+}
+
+@keyframes lb-leaf-path-1 {
+  0% {
+    transform: translate(30px, 160px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(490px, 120px) rotate(360deg) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes lb-leaf-path-2 {
+  0% {
+    transform: translate(60px, 210px) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(510px, 170px) rotate(420deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes lb-leaf-path-3 {
+  0% {
+    transform: translate(140px, 110px) rotate(0deg) scale(0.65);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(480px, 80px) rotate(320deg) scale(0.75);
+    opacity: 0;
+  }
+}
+
+/* Dynamic Wind Sway for Foliage (BulkMoveTo simulation) */
+.lb-foliage {
+  transform-origin: bottom center;
+  animation: lb-foliage-sway 2.4s ease-in-out infinite alternate;
+}
+
+.lb-palm {
+  transform-origin: 70px 209px;
+  animation-duration: 2.8s;
+}
+
+.lb-tree-1 {
+  transform-origin: 195px 178px;
+  animation-duration: 2.2s;
+  animation-delay: 0.3s;
+}
+
+.lb-pine {
+  transform-origin: 365px 132px;
+  animation-duration: 2.6s;
+  animation-delay: 0.6s;
+}
+
+.lb-bush {
+  transform-origin: 370px 180px;
+  animation-duration: 1.9s;
+  animation-delay: 0.2s;
+}
+
+@keyframes lb-foliage-sway {
+  0% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  100% {
+    transform: rotate(2.5deg) skewX(2deg);
+  }
+}
+
+/* Waterfall Flow Animation */
+.lb-waterfall-flow {
+  animation: lb-flow-down 0.8s linear infinite;
+}
+
+@keyframes lb-flow-down {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 10;
+  }
+}
+
+.lb-water-mist {
+  animation: lb-mist-puff 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes lb-mist-puff {
+  0% {
+    transform: scale(0.9) translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15) translateY(-1px);
+    opacity: 0.85;
+  }
+}
+
+/* The Sacred Moon Fountain Pulse & Glow */
+.lb-fountain-aura {
+  animation: lb-aura-pulse 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes lb-aura-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+.lb-fountain-moon {
+  animation: lb-moon-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes lb-moon-float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+.lb-ripple-1 {
+  animation: lb-ripple-wave 2.8s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+.lb-ripple-2 {
+  animation: lb-ripple-wave 2.8s cubic-bezier(0.2, 0.6, 0.4, 1) 1.4s infinite;
+}
+
+@keyframes lb-ripple-wave {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.lb-sparkle {
+  animation: lb-sparkle-twinkle 1.8s ease-in-out infinite alternate;
+}
+
+.lb-sparkle-2 {
+  animation-delay: 0.9s;
+}
+
+@keyframes lb-sparkle-twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Cottage Chimney Smoke Rise */
+.lb-smoke-1 {
+  animation: lb-smoke-float 2.4s ease-out infinite;
+}
+
+.lb-smoke-2 {
+  animation: lb-smoke-float 2.4s ease-out 1.2s infinite;
+}
+
+@keyframes lb-smoke-float {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-8px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Character 6-DOF Rig Subtle Idle Breath */
+.lb-character {
+  animation: lb-char-idle 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes lb-char-idle {
+  0% {
+    transform: translate(232px, 176px);
+  }
+  100% {
+    transform: translate(232px, 175px);
+  }
+}
+
+/* Cloud Drifting */
+.lb-cloud-1 {
+  animation: lb-cloud-drift 40s linear infinite;
+}
+
+.lb-cloud-2 {
+  animation: lb-cloud-drift 48s linear 12s infinite;
+}
+
+@keyframes lb-cloud-drift {
+  0% {
+    transform: translateX(-40px);
+  }
+  100% {
+    transform: translateX(540px);
+  }
+}
+
+/* UI Icons Animations */
+.lb-pulse-celestial {
+  animation: lb-icon-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes lb-icon-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 4px #fef08a); }
+}
+
+.lb-spin-slow {
+  animation: lb-rotate-slow 8s linear infinite;
+}
+
+@keyframes lb-rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Footer Telemetry Strip Details
+   -------------------------------------------------------------------------- */
+.lb-telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  color: var(--ink-2, #a1a1aa);
+}
+
+.lb-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-2, #3f3f46);
+}
+
+.lb-dot--sage {
+  background: #8eb897;
+  box-shadow: 0 0 6px #8eb897;
+}
+
+.lb-dot--pulse {
+  background: #38bdf8;
+  box-shadow: 0 0 6px #38bdf8;
+  animation: lb-dot-flash 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes lb-dot-flash {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.lb-badge-strict {
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 8.5px;
+  font-weight: 700;
+  background: color-mix(in srgb, #f59e0b 20%, var(--surface-2, #27272a));
+  border: 1px solid color-mix(in srgb, #f59e0b 45%, transparent);
+  color: #fbbf24;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility & Mobile Responsiveness
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .lb-wind-stream,
+  .lb-leaf-1,
+  .lb-leaf-2,
+  .lb-leaf-3,
+  .lb-foliage,
+  .lb-waterfall-flow,
+  .lb-water-mist,
+  .lb-fountain-aura,
+  .lb-fountain-moon,
+  .lb-ripple-1,
+  .lb-ripple-2,
+  .lb-sparkle,
+  .lb-smoke-1,
+  .lb-smoke-2,
+  .lb-character,
+  .lb-cloud-1,
+  .lb-cloud-2,
+  .lb-pulse-celestial,
+  .lb-spin-slow,
+  .lb-dot--pulse {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .lunabay-stage {
+    max-height: 250px;
+  }
+
+  .lb-head,
+  .lb-foot {
+    padding: 6px 10px;
+  }
+
+  .lb-pill--wind {
+    display: none;
+  }
+
+  .lb-brand-sub {
+    display: none;
+  }
+}
