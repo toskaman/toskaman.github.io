@@ -328,6 +328,8 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
               <button class="filter" type="button" data-filter="security" aria-pressed="false"><span data-t="filter_security">Security</span><span class="filter-count" data-count-for="security"></span></button>
               <button class="filter" type="button" data-filter="extension" aria-pressed="false"><span data-t="filter_extension">Extensions</span><span class="filter-count" data-count-for="extension"></span></button>
               <button class="filter" type="button" data-filter="research" aria-pressed="false"><span data-t="filter_research">Research</span><span class="filter-count" data-count-for="research"></span></button>
+              <button class="filter" type="button" data-filter="ai" aria-pressed="false"><span data-t="filter_ai">AI</span><span class="filter-count" data-count-for="ai"></span></button>
+
             </div>
           </div>
 
@@ -336,9 +338,254 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             <div class="group-head" data-reveal>
               <span class="group-index">A</span>
               <h3 class="group-title" data-t="group_research">Research &amp; Engineering</h3>
-              <span class="group-count" data-group-count>05</span>
+              <span class="group-count" data-group-count>07</span>
             </div>
             <div class="work-grid">
+<!-- ─── OpenBridge Flagship Card ─── -->
+              <article
+                class="card card--full"
+                data-reveal
+                data-category="research ai desktop"
+                data-title="OpenBridge — Meta AI Device Fabric"
+                data-summary="Tissu d'appareils intelligent propulsé par Meta AI (Llama 3.2 3B &amp; Muse Glimmer 30B) : découverte multi-transport (mDNS, SSDP, BLE, ADB, Router), synthèse à la volée d'interfaces de contrôle inter-appareils (TV, Watch7, Phone, Vacuum, PC), portes de sécurité déterministes et annulation transactionnelle."
+                data-tags="Python 3.14, Meta AI, Llama 3.2, Glimmer 30B, IoT, Mesh, ADB, BLE, Reverse Engineering, Security"
+              >
+                <div class="card-visual v-openbridge" aria-hidden="true">
+                  <div class="openbridge">
+                    <div class="openbridge-head">
+                      <span class="openbridge-title">
+                        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="12" cy="20" r="2"/><line x1="6" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="18" y2="12"/><line x1="12" y1="6" x2="12" y2="9"/><line x1="12" y1="15" x2="12" y2="18"/></svg>
+                        <span data-t="ob_mesh_title">OpenBridge · Meta AI Device Fabric</span>
+                      </span>
+                      <span class="openbridge-live">
+                        <i></i>
+                        <span data-t="ob_mesh_status">6 / 6 nodes live</span>
+                      </span>
+                    </div>
+
+                    <div class="openbridge-stage">
+                      <svg class="openbridge-plot" viewBox="0 0 460 250" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                          <filter id="obGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2.5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                          </filter>
+                        </defs>
+
+                        <!-- Mesh Network Grid Background Lines -->
+                        <g class="openbridge-grid" stroke="currentColor" stroke-opacity="0.05" stroke-dasharray="2 4">
+                          <line x1="0" y1="65" x2="460" y2="65" />
+                          <line x1="0" y1="185" x2="460" y2="185" />
+                          <line x1="75" y1="0" x2="75" y2="250" />
+                          <line x1="230" y1="0" x2="230" y2="250" />
+                          <line x1="385" y1="0" x2="385" y2="250" />
+                        </g>
+
+                        <!-- Mesh Topology Links (Edges) -->
+                        <g class="openbridge-links">
+                          <!-- PC (75, 65) <-> Router (230, 65) -->
+                          <line class="openbridge-link is-active" x1="75" y1="65" x2="230" y2="65" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="4 3" />
+                          <!-- Router (230, 65) <-> Android TV (385, 65) -->
+                          <line class="openbridge-link is-active" x1="230" y1="65" x2="385" y2="65" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="4 3" />
+                          <!-- PC (75, 65) <-> Phone (75, 185) [ADB Bridge] -->
+                          <line class="openbridge-link is-bridge" x1="75" y1="65" x2="75" y2="185" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="3 3" />
+                          <!-- Router (230, 65) <-> Phone (75, 185) -->
+                          <line class="openbridge-link is-active" x1="230" y1="65" x2="75" y2="185" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="4 3" />
+                          <!-- Phone (75, 185) <-> Watch7 (230, 185) [BLE 5.3 Relay] -->
+                          <line class="openbridge-link is-relay" x1="75" y1="185" x2="230" y2="185" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="3 3" />
+                          <!-- Router (230, 65) <-> Watch7 (230, 185) -->
+                          <line class="openbridge-link is-active" x1="230" y1="65" x2="230" y2="185" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="4 3" />
+                          <!-- Router (230, 65) <-> Vacuum (385, 185) [Tuya LAN] -->
+                          <line class="openbridge-link is-active" x1="230" y1="65" x2="385" y2="185" stroke="var(--line-2, #27272a)" stroke-width="1.5" stroke-dasharray="4 3" />
+                          <!-- Android TV (385, 65) <-> Vacuum (385, 185) [SYNTHESIZED AI CHANNEL] -->
+                          <line class="openbridge-link is-synth" x1="385" y1="65" x2="385" y2="185" stroke="#10b981" stroke-width="2" stroke-dasharray="3 3" />
+                        </g>
+
+                        <!-- Animated Data Flow Packets -->
+                        <g class="openbridge-packets">
+                          <!-- Packet: PC -> Router (Meta AI proposal) -->
+                          <circle r="3.2" fill="#38bdf8" filter="url(#obGlow)">
+                            <animateMotion path="M75 65 L230 65" dur="2.4s" repeatCount="indefinite" />
+                          </circle>
+                          <!-- Packet: Router -> TV (Generated UI Panel) -->
+                          <circle r="3.2" fill="#a78bfa" filter="url(#obGlow)">
+                            <animateMotion path="M230 65 L385 65" dur="2s" begin="0.4s" repeatCount="indefinite" />
+                          </circle>
+                          <!-- Packet: TV -> Vacuum (Hold-Press Dispatch tx-4a96f8f6) -->
+                          <circle r="3.6" fill="#34d399" filter="url(#obGlow)">
+                            <animateMotion path="M385 65 L385 185" dur="1.6s" begin="0.9s" repeatCount="indefinite" />
+                          </circle>
+                          <!-- Packet: Phone -> Watch7 (Companion Sync) -->
+                          <circle r="3" fill="#38bdf8" filter="url(#obGlow)">
+                            <animateMotion path="M75 185 L230 185" dur="2.1s" begin="0.6s" repeatCount="indefinite" />
+                          </circle>
+                          <!-- Packet: Vacuum -> Router (State Read-back verification) -->
+                          <circle r="3" fill="#60a5fa" filter="url(#obGlow)">
+                            <animateMotion path="M385 185 L230 65" dur="2.5s" begin="1.3s" repeatCount="indefinite" />
+                          </circle>
+                        </g>
+
+                        <!-- Node 1: Host PC (75, 65) -->
+                        <g class="openbridge-node node-pc" transform="translate(75, 65)">
+                          <circle class="node-halo" r="26" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.12" />
+                          <circle class="node-disc" r="19" fill="var(--surface, #18181b)" stroke="var(--line-2, #27272a)" stroke-width="1.5" />
+                          <path class="node-glyph" d="M-7 -5h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2zM-3 6v2M3 6v2M-5 8h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle class="node-pin" cx="13" cy="-13" r="3.5" fill="#10b981" />
+                        </g>
+
+                        <!-- Node 2: Freebox Router (230, 65) -->
+                        <g class="openbridge-node is-hub node-router" transform="translate(230, 65)">
+                          <circle class="node-halo" r="28" fill="currentColor" fill-opacity="0.05" stroke="currentColor" stroke-opacity="0.15" />
+                          <circle class="node-disc" r="21" fill="var(--surface, #18181b)" stroke="var(--line-2, #27272a)" stroke-width="1.5" />
+                          <path class="node-glyph" d="M-8 -3h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-16a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2zM-5 -3v-3M0 -3v-3M5 -3v-3M-4 1h.01M0 1h.01M4 1h.01" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle class="node-pin" cx="14" cy="-14" r="3.5" fill="#10b981" />
+                        </g>
+
+                        <!-- Node 3: Android TV (385, 65) -->
+                        <g class="openbridge-node node-tv" transform="translate(385, 65)">
+                          <circle class="node-halo" r="26" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.12" />
+                          <circle class="node-disc" r="19" fill="var(--surface, #18181b)" stroke="var(--line-2, #27272a)" stroke-width="1.5" />
+                          <path class="node-glyph" d="M-8 -4h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-16a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2zM-4 -7l4 3M4 -7l-4 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle class="node-pin" cx="13" cy="-13" r="3.5" fill="#10b981" />
+                        </g>
+
+                        <!-- Node 4: Mobile Phone (75, 185) -->
+                        <g class="openbridge-node node-phone" transform="translate(75, 185)">
+                          <circle class="node-halo" r="26" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.12" />
+                          <circle class="node-disc" r="19" fill="var(--surface, #18181b)" stroke="var(--line-2, #27272a)" stroke-width="1.5" />
+                          <path class="node-glyph" d="M-5 -8h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2v-12a2 2 0 0 1 2-2zM0 4h.01" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle class="node-pin" cx="13" cy="-13" r="3.5" fill="#10b981" />
+                        </g>
+
+                        <!-- Node 5: Galaxy Watch7 (230, 185) -->
+                        <g class="openbridge-node node-watch" transform="translate(230, 185)">
+                          <circle class="node-halo" r="26" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.12" />
+                          <circle class="node-disc" r="19" fill="var(--surface, #18181b)" stroke="var(--line-2, #27272a)" stroke-width="1.5" />
+                          <circle class="node-glyph" cx="0" cy="0" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                          <path class="node-glyph" d="M0 -3v3l2 1.5M-4 -6.5l1 -2.5h6l1 2.5M-4 6.5l1 2.5h6l1 -2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle class="node-pin" cx="13" cy="-13" r="3.5" fill="#10b981" />
+                        </g>
+
+                        <!-- Node 6: Robot Vacuum (385, 185) -->
+                        <g class="openbridge-node node-vacuum" transform="translate(385, 185)">
+                          <circle class="node-halo" r="26" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.12" />
+                          <circle class="node-disc" r="19" fill="var(--surface, #18181b)" stroke="var(--line-2, #27272a)" stroke-width="1.5" />
+                          <circle class="node-glyph" cx="0" cy="0" r="8" fill="none" stroke="currentColor" stroke-width="1.5" />
+                          <circle class="node-glyph" cx="0" cy="-3" r="2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                          <path class="node-glyph" d="M-4 2.5h8M-2 4.5h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <circle class="node-pin" cx="13" cy="-13" r="3.5" fill="#10b981" />
+                        </g>
+                      </svg>
+
+                      <!-- Labels Overlay -->
+                      <div class="openbridge-labels">
+                        <div class="openbridge-label lbl-pc">
+                          <strong data-t="ob_node_pc">Host PC</strong>
+                          <span data-t="ob_node_pc_sub">Meta AI · 30B</span>
+                        </div>
+                        <div class="openbridge-label lbl-router">
+                          <strong data-t="ob_node_router">Freebox Router</strong>
+                          <span data-t="ob_node_router_sub">mDNS · LAN Hub</span>
+                        </div>
+                        <div class="openbridge-label lbl-tv">
+                          <strong data-t="ob_node_tv">Android TV</strong>
+                          <span data-t="ob_node_tv_sub">Dynamic UI · ADB</span>
+                        </div>
+                        <div class="openbridge-label lbl-phone">
+                          <strong data-t="ob_node_phone">Mobile Relay</strong>
+                          <span data-t="ob_node_phone_sub">BLE Relay · Companion</span>
+                        </div>
+                        <div class="openbridge-label lbl-watch">
+                          <strong data-t="ob_node_watch">Galaxy Watch7</strong>
+                          <span data-t="ob_node_watch_sub">Wearable · BLE 5.3</span>
+                        </div>
+                        <div class="openbridge-label lbl-vacuum">
+                          <strong data-t="ob_node_vacuum">Robot Vacuum</strong>
+                          <span data-t="ob_node_vacuum_sub">Tuya LAN · Mop Dock</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="openbridge-foot">
+                      <span><i class="openbridge-dot dot-ai"></i><span data-t="ob_foot_ai">Meta AI Model Mesh</span></span>
+                      <span><i class="openbridge-dot dot-bridge"></i><span data-t="ob_foot_bridge">Cross-Device Synthesis</span></span>
+                      <span><i class="openbridge-dot dot-safe"></i><span data-t="ob_foot_safe">Zero-Cloud Safety Gate</span></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-type" data-t="type_openbridge">AI Device Fabric &amp; IoT Architecture</span>
+                  </div>
+                  <h4 class="card-title">
+                    <button class="card-open" type="button" data-t="title_openbridge">OpenBridge — Meta AI Device Fabric</button>
+                  </h4>
+                  <p class="card-desc" data-t="p_openbridge">
+                    Intelligent, permission-aware cross-device fabric powered by Meta AI (Llama 3.2 3B &amp; Muse Glimmer 30B): multi-transport auto-discovery (mDNS, SSDP, BLE relays, ADB, router), on-demand synthesis of custom control panels (Android TV vacuum remote), deterministic safety gates, and transactional undo receipts.
+                  </p>
+                  <div class="card-links">
+                    <a class="card-link" href="https://github.com/toskaman/openbridge" target="_blank" rel="noopener">
+                      <span data-t="link_openbridge_github">GitHub Repository</span>
+                      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                    </a>
+                    <a class="card-link" href="https://github.com/toskaman/openbridge#readme" target="_blank" rel="noopener">
+                      <span data-t="link_openbridge_showcase">Showcase &amp; Evidence</span>
+                      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                    </a>
+                  </div>
+                  <dl class="card-stats">
+                    <div><dt data-t="ob_stat_tests">tests passing</dt><dd>2,115</dd></div>
+                    <div><dt data-t="ob_stat_records">verified evidence records</dt><dd>37</dd></div>
+                    <div><dt data-t="ob_stat_runtime">external dependencies</dt><dd>0</dd></div>
+                    <div><dt data-t="ob_stat_models">local Meta AI models</dt><dd>30B + 3B</dd></div>
+                  </dl>
+                  <ul class="card-features">
+                    <li>
+                      <b data-t="ob_f1_t">Meta AI Control Synthesis</b>
+                      <span data-t="ob_f1_d">Local Muse Glimmer 30B and Llama 3.2 3B generate novel cross-device control surfaces on the fly — such as a dedicated TV vacuum remote with OCR-verified D-pad mapping and live capability bindings.</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f2_t">Deterministic Safety Architecture</b>
+                      <span data-t="ob_f2_d">Multi-tier safety pipeline requiring owner consent per privileged action, cryptographic fingerprinting, read-back verification before execution, and auditable cryptographic receipts (tx-*).</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f3_t">Multi-Transport Fabric</b>
+                      <span data-t="ob_f3_d">Autonomous unified discovery uniting mDNS, SSDP/UPnP, router ARP/DHCP tables, ADB over Wi-Fi/USB, and remote BLE relays through paired Android TV and phone companions.</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f4_t">Cross-Device Handover</b>
+                      <span data-t="ob_f4_d">Dynamic control migration across heterogeneous endpoints (Galaxy Watch7, Android TV, Mobile, Desktop PC) with atomic state snapshots and idempotent rollback.</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f5_t">Transactional Revocation &amp; Undo</b>
+                      <span data-t="ob_f5_d">Physical and non-reversible acts clearly labeled before approval; instant permission revocation with active denial verification and live timeline audit logging.</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f6_t">Zero-Dependency Core Runtime</b>
+                      <span data-t="ob_f6_d">Engineered entirely in pure Python 3.14 standard library with zero external runtime dependencies, 2,115 automated unit and integration tests, and offline deterministic replay.</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f7_t">Empirical Hardware Proof</b>
+                      <span data-t="ob_f7_d">37 rigorously verified evidence records across physical hardware (Android TV, Galaxy Watch7, smartphone, Freebox Delta, Tuya vacuum, secondary PC) and QEMU guests.</span>
+                    </li>
+                    <li>
+                      <b data-t="ob_f8_t">Bilingual Natural Language Routing</b>
+                      <span data-t="ob_f8_d">FR and EN intent normalization evaluated across a 55-case corpus (including verbatim Galaxy Watch7 voice transcripts), reliably resolving plain speech into typed capability plans.</span>
+                    </li>
+                  </ul>
+                  <ul class="card-tags">
+                    <li>Python 3.14</li>
+                    <li>Meta AI</li>
+                    <li>Llama 3.2</li>
+                    <li>Glimmer 30B</li>
+                    <li>IoT Mesh</li>
+                    <li>ADB</li>
+                    <li>BLE Relay</li>
+                    <li>Zero-Cloud</li>
+                  </ul>
+                </div>
+              </article>
               <article
                 class="card card--full"
                 data-reveal
@@ -396,6 +643,79 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
                     <li><b data-t="ff_f10_t">Quality</b><span data-t="ff_f10_d">164/164 automated tests, 0 compiler warnings across 25 projects, soak testing and 50-player concurrent load tests.</span></li>
                   </ul>
                   <ul class="card-tags"><li>C#</li><li>.NET 9</li><li>Reverse engineering</li><li>Networking</li><li>MMO</li></ul>
+                </div>
+              </article>
+
+              <article
+                class="card card--lg"
+                data-reveal
+                data-category="research game desktop"
+                data-title="OpenKF — Native 64-bit Killing Floor Client in Rust"
+                data-summary="Clean-room reimplementation of the Killing Floor v1065 client in Rust: 64-bit architecture, native Vulkan renderer (671 FPS vs 120 FPS retail cap), retail network protocol with Steam auth, multi-threaded asset streaming and 0.14s map loading."
+                data-tags="Rust, Vulkan, Unreal Engine 2.5, Reverse Engineering, 64-bit, Networking, Gaming"
+              >
+                <div class="card-visual v-openkf v-bench" aria-hidden="true">
+                  <div class="bench">
+                    <div class="bench-head">
+                      <span data-t="kf_bench_scene">KF-WestLondon · RTX 4060 Ti</span>
+                      <span class="bench-badge" data-t="kf_bench_badge">Vulkan 64-bit</span>
+                    </div>
+                    <div class="bench-rows">
+                      <div class="bench-row">
+                        <span class="bench-name">OpenKF</span>
+                        <span class="bench-track"><span class="bench-bar is-accent" style="--w: 100%"></span></span>
+                        <span class="bench-val">671 FPS</span>
+                      </div>
+                      <div class="bench-row">
+                        <span class="bench-name" data-t="kf_bench_retail">Retail v1065</span>
+                        <span class="bench-track"><span class="bench-bar" style="--w: 17.9%"></span></span>
+                        <span class="bench-val">120 FPS</span>
+                      </div>
+                    </div>
+                    <div class="bench-foot">
+                      <span><b>671</b><span data-t="kf_foot_fps">solo FPS</span></span>
+                      <span><b>0.14s</b><span data-t="kf_foot_load">map load (24x)</span></span>
+                      <span><b>31</b><span data-t="kf_foot_threads">threads</span></span>
+                      <span><b>Vulkan</b><span data-t="kf_foot_api">renderer</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-type" data-t="type_engine">Game Engine Research</span>
+                  </div>
+                  <h4 class="card-title">
+                    <button class="card-open" type="button" data-t="title_openkf">OpenKF — Native 64-bit Killing Floor Client in Rust</button>
+                  </h4>
+                  <p class="card-desc" data-t="p_openkf">Clean-room, native 64-bit client for Killing Floor v1065 (Unreal Engine 2.5) in Rust. Joins real multiplayer servers, streams packages, and renders with a low-overhead Vulkan pipeline delivering 671 FPS and 0.14s map loads.</p>
+                  <div class="card-links">
+                    <a class="card-link" href="https://github.com/toskaman/OpenKF" target="_blank" rel="noopener">
+                      <span data-t="link_openkf">View on GitHub</span>
+                      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                    </a>
+                  </div>
+                  <dl class="card-stats">
+                    <div><dt data-t="kf_stat_fps">solo FPS (Vulkan)</dt><dd>671</dd></div>
+                    <div><dt data-t="kf_stat_load">map load time</dt><dd>0.14s</dd></div>
+                    <div><dt data-t="kf_stat_speedup">load vs retail</dt><dd>24x</dd></div>
+                    <div><dt data-t="kf_stat_threads">active threads</dt><dd>31</dd></div>
+                  </dl>
+                  <ul class="card-features">
+                    <li><b data-t="kf_f1_t">Modern Vulkan Pipeline</b><span data-t="kf_f1_d">Native SPIR-V shaders, skeletal mesh GPU skinning, glowing materials, particle bursts, and surface-projected decals delivering 671 FPS.</span></li>
+                    <li><b data-t="kf_f2_t">Retail Multiplayer Protocol</b><span data-t="kf_f2_d">Clean-room UE2.5 networking: Steam authentication handshake, actor replication, RPCs, trader purchases, server travel, and auto-reconnect.</span></li>
+                    <li><b data-t="kf_f3_t">Sub-Second Asset Streaming</b><span data-t="kf_f3_d">Loads KF-WestLondon in 0.14s (24x faster than retail 3.32s) using memory-mapped package readers and multi-threaded background deserialization.</span></li>
+                    <li><b data-t="kf_f4_t">Multi-Tier Content Downloads</b><span data-t="kf_f4_d">Integrated FastDL (HTTP .uz2 redirects), retail Cache.ini compatibility, and in-band ChannelDownload (CHTYPE_FILE) with background progress tracking.</span></li>
+                    <li><b data-t="kf_f5_t">Physics &amp; Positional Audio</b><span data-t="kf_f5_d">Articulated multi-body Karma ragdoll simulation and HRTF-capable 3D audio mixer decoding 2,839/2,839 game sound assets with zero failures.</span></li>
+                    <li><b data-t="kf_f6_t">In-Viewport Server Browser</b><span data-t="kf_f6_d">Built-in F2 overlay with favorites, recents, direct IP, LAN discovery, and Steam Web API server query integration with 10-minute TTL caching.</span></li>
+                  </ul>
+                  <ul class="card-tags">
+                    <li>Rust</li>
+                    <li>Vulkan</li>
+                    <li>Unreal Engine 2.5</li>
+                    <li>Reverse Engineering</li>
+                    <li>64-bit</li>
+                    <li>Networking</li>
+                  </ul>
                 </div>
               </article>
 
@@ -515,9 +835,354 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             <div class="group-head" data-reveal>
               <span class="group-index">B</span>
               <h3 class="group-title" data-t="group_tooling">AI Tooling &amp; Telemetry</h3>
-              <span class="group-count" data-group-count>04</span>
+              <span class="group-count" data-group-count>06</span>
             </div>
             <div class="work-grid">
+<article
+                class="card card--lg"
+                data-reveal
+                data-category="research ai desktop"
+                data-title="ANTICIPATE — Decision Firewall for Software Teams"
+                data-summary="ANTICIPATE : pare-feu décisionnel pour équipes logicielles (entrée Atlassian Codegeist 2026). Graphe d'évidences Jira, moteur de simulation déterministe CORE 0.2.0, comparaison de scénarios avant changement risqué, portail de politiques PASS/BLOCKED et passeport de prévention inviolable."
+                data-tags="Atlassian Forge, Jira, TypeScript, React, Decision Firewall, Risk Engine, Prevention Passport, Codegeist 2026"
+              >
+                <div class="card-visual v-anticipate" aria-hidden="true" data-dialog="clone">
+                  <div class="anticipate-firewall">
+                    <div class="afw-head">
+                      <span class="afw-brand">
+                        <i class="afw-pulse"></i>
+                        <span data-t="ant_v_brand">Atlassian Forge · Codegeist 2026</span>
+                      </span>
+                      <span class="afw-target">
+                        <span class="afw-tag">JIRA-4821</span>
+                        <span class="afw-target-name">Deprecate Legacy Auth API</span>
+                      </span>
+                    </div>
+
+                    <div class="afw-metrics">
+                      <div class="afw-metric afw-metric--score">
+                        <div class="afw-metric-label" data-t="ant_v_risk_lbl">Risk Score</div>
+                        <div class="afw-score-val">
+                          <span class="is-danger">78</span>
+                          <span class="afw-arrow">→</span>
+                          <span class="is-pass">14</span>
+                          <span class="afw-unit">/100</span>
+                        </div>
+                        <div class="afw-bar-track">
+                          <span class="afw-bar-fill is-danger" style="--w: 78%"></span>
+                          <span class="afw-bar-fill is-pass" style="--w: 14%"></span>
+                        </div>
+                      </div>
+
+                      <div class="afw-metric afw-metric--gate">
+                        <div class="afw-metric-label" data-t="ant_v_gate_lbl">Policy Gate</div>
+                        <div class="afw-gate-flow">
+                          <span class="afw-badge is-blocked" data-t="ant_v_blocked">
+                            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                            BLOCKED
+                          </span>
+                          <span class="afw-arrow">→</span>
+                          <span class="afw-badge is-pass" data-t="ant_v_pass">
+                            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            PASS
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="afw-scenarios">
+                      <div class="afw-scenario is-blocked">
+                        <div class="afw-scenario-meta">
+                          <span class="afw-scenario-name" data-t="ant_v_sc1_name">Scenario A · Direct Deprecation</span>
+                          <span class="afw-scenario-badge is-blocked" data-t="ant_v_sc1_status">3 Violations</span>
+                        </div>
+                        <p class="afw-scenario-desc" data-t="ant_v_sc1_desc">3 upstream services broken · 14 consumer integrations unmigrated</p>
+                      </div>
+
+                      <div class="afw-scenario is-pass">
+                        <div class="afw-scenario-meta">
+                          <span class="afw-scenario-name" data-t="ant_v_sc2_name">Scenario B · Parallel Bridge &amp; Dual-Run</span>
+                          <span class="afw-scenario-badge is-pass" data-t="ant_v_sc2_status">0 Violations</span>
+                        </div>
+                        <p class="afw-scenario-desc" data-t="ant_v_sc2_desc">Compatibility shim active · 60-day dual-run grace window · Clean pass</p>
+                      </div>
+                    </div>
+
+                    <div class="afw-foot">
+                      <div class="afw-passport">
+                        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <span data-t="ant_v_passport">Passport #PASS-2026-4C68 · Sealed SHA-256</span>
+                      </div>
+                      <span class="afw-engine" data-t="ant_v_engine">Deterministic CORE 0.2.0</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_firewall">Decision Firewall · Governance</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_anticipate">ANTICIPATE</button></h4>
+                  <p class="card-desc" data-t="p_anticipate">Decision Firewall for software teams built for Atlassian Codegeist 2026. Evaluates dependency evidence, simulates change scenarios deterministically, enforces automated policy gates, and issues tamper-proof Prevention Passports before high-risk Jira changes ship.</p>
+                  <div class="card-links">
+                    <a class="card-link" href="https://github.com/toskaman/anticipate-codegeist-2026" target="_blank" rel="noopener"><span data-t="link_anticipate_repo">View on GitHub</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                  </div>
+                  <dl class="card-stats">
+                    <div><dt data-t="ant_stat_tests">tests passing</dt><dd>111/111</dd></div>
+                    <div><dt data-t="ant_stat_screens">connected screens</dt><dd>7</dd></div>
+                    <div><dt data-t="ant_stat_engine">simulation engine</dt><dd>CORE 0.2.0</dd></div>
+                    <div><dt data-t="ant_stat_audit">audit integrity</dt><dd>SHA-256</dd></div>
+                  </dl>
+                  <ul class="card-features">
+                    <li><b data-t="ant_f1_t">Evidence Graph Engine</b><span data-t="ant_f1_d">Extracts deep cross-project Jira relationships, dependency paths and unknown states without relying on fragile guesses or black-box predictions.</span></li>
+                    <li><b data-t="ant_f2_t">Deterministic Scenario Lab</b><span data-t="ant_f2_d">Compares direct removal, temporary retention and migration pathways side-by-side using the immutable CORE 0.2.0 simulation engine.</span></li>
+                    <li><b data-t="ant_f3_t">Automated Policy Firewall</b><span data-t="ant_f3_d">Enforces multi-tier governance gates (PASS / BLOCKED) checking breaking changes, SLA thresholds and cross-team dependencies before execution.</span></li>
+                    <li><b data-t="ant_f4_t">Prevention Passport™</b><span data-t="ant_f4_d">Cryptographically sealed audit artifact binding the approved scenario, reviewer signature, exact action payloads and execution hash into a single verifiable record.</span></li>
+                    <li><b data-t="ant_f5_t">Atlassian Forge Custom UI</b><span data-t="ant_f5_d">Native 7-screen enterprise React/TypeScript interface built on Forge Bridge with zero-leak tenant isolation and strict egress security policies.</span></li>
+                    <li><b data-t="ant_f6_t">Rovo AI &amp; MCP Integration</b><span data-t="ant_f6_d">Three read-only MCP governance tools exposed to Atlassian Rovo agents for AI-assisted dependency queries and risk checks.</span></li>
+                    <li><b data-t="ant_f7_t">Two-Phase Execution Safety</b><span data-t="ant_f7_d">Strict separation between plan approval and execution confirmation, preventing accidental Jira mutations and duplicate API dispatches.</span></li>
+                    <li><b data-t="ant_f8_t">Enterprise Rigor &amp; Testing</b><span data-t="ant_f8_d">111 automated tests (unit, integration, Playwright browser), zero console warnings, strict TypeScript typing and responsive navy/teal HUD.</span></li>
+                  </ul>
+                  <ul class="card-tags"><li>Atlassian Forge</li><li>TypeScript</li><li>React</li><li>Jira</li><li>Governance</li><li>AI Firewall</li></ul>
+                </div>
+              </article>
+
+<article
+  class="card card--lg"
+  data-reveal
+  data-category="research desktop security"
+  data-title="BridgeWindows v4 — Remote Agent Mesh &amp; Presence Orb"
+  data-summary="Architecture de mesh d'agents distants et pont sécurisé Windows : orb de présence animé, télémétrie multi-machines temps réel sur 8 nœuds, authentification mutuelle HMAC-SHA256, 23/23 tests unitaires validés."
+  data-tags="TypeScript, Node.js, C#, Windows, Telemetry, Security, Mesh, Agent, HMAC, DWM, WebSocket"
+>
+  <div class="card-visual v-bridge" aria-hidden="true" data-dialog="clone">
+    <div class="bridge">
+      <div class="bridge-head">
+        <span class="bridge-status">
+          <i class="bridge-rec"></i>
+          <span data-t="bw_orb_status">BridgeWindows Mesh · 8 Nodes Active</span>
+        </span>
+        <div class="bridge-badges">
+          <span class="bridge-badge bridge-badge--auth">
+            <svg class="bridge-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" /><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+            <span data-t="bw_auth_badge">HMAC Mutual Auth</span>
+          </span>
+          <span class="bridge-badge bridge-badge--tests">
+            <svg class="bridge-badge-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z" fill="currentColor"/></svg>
+            <span data-t="bw_tests_badge">23/23 tests green</span>
+          </span>
+        </div>
+      </div>
+
+      <svg class="bridge-plot" viewBox="0 0 460 210" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="bwGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur1" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur2" />
+            <feMerge>
+              <feMergeNode in="blur2" />
+              <feMergeNode in="blur1" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <radialGradient id="bwOrbGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="1" />
+            <stop offset="45%" stop-color="#0284c7" stop-opacity="0.85" />
+            <stop offset="80%" stop-color="#0369a1" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="bwAuraGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+            <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.12" />
+            <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+          </radialGradient>
+          <style>
+            .bw-bg-grid { stroke: rgba(255, 255, 255, 0.04); stroke-width: 1; }
+            .bw-mesh-outer { stroke: rgba(56, 189, 248, 0.22); stroke-width: 1.2; stroke-dasharray: 4 4; fill: none; }
+            .bw-mesh-cross { stroke: rgba(14, 165, 233, 0.12); stroke-width: 1; fill: none; }
+            .bw-mesh-spoke { stroke: rgba(56, 189, 248, 0.35); stroke-width: 1.2; }
+            .bw-mesh-spoke-active { stroke: #38bdf8; stroke-width: 1.5; stroke-dasharray: 6 10; animation: bwDash 3s linear infinite; }
+            .bw-aura { transform-origin: 230px 105px; animation: bwBreathe 3.5s ease-in-out infinite; }
+            .bw-ring-spin { transform-origin: 230px 105px; animation: bwSpin 20s linear infinite; }
+            .bw-ring-rev { transform-origin: 230px 105px; animation: bwSpinRev 14s linear infinite; }
+            .bw-core { transform-origin: 230px 105px; animation: bwBreathe 2.5s ease-in-out infinite; }
+            .bw-node-halo { fill: none; stroke: rgba(52, 211, 153, 0.45); animation: bwPulse 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
+            .bw-node-base { fill: #064e3b; stroke: #10b981; stroke-width: 1.5; }
+            .bw-node-core { fill: #34d399; }
+            .bw-host .bw-node-halo { stroke: rgba(56, 189, 248, 0.55); }
+            .bw-host .bw-node-base { fill: #0c4a6e; stroke: #38bdf8; stroke-width: 2; }
+            .bw-host .bw-node-core { fill: #7dd3fc; }
+            .bw-lbl { fill: var(--ink, #ededef); font-family: var(--font-mono, monospace); font-size: 9px; font-weight: 600; }
+            .bw-sub { fill: var(--ink-3, #8a8a93); font-family: var(--font-mono, monospace); font-size: 7.5px; }
+            .bw-orb-title { fill: #38bdf8; font-family: var(--font-mono, monospace); font-size: 7.5px; font-weight: 700; letter-spacing: 0.14em; }
+            @keyframes bwBreathe { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.12); opacity: 1; } }
+            @keyframes bwSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+            @keyframes bwSpinRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+            @keyframes bwDash { to { stroke-dashoffset: -32; } }
+            @keyframes bwPulse { 0% { r: 5px; opacity: 0.9; stroke-width: 1.5; } 100% { r: 15px; opacity: 0; stroke-width: 0.5; } }
+          </style>
+        </defs>
+
+        <!-- Background grid matrix -->
+        <g class="bw-bg-grid">
+          <line x1="30" y1="105" x2="430" y2="105" />
+          <line x1="230" y1="20" x2="230" y2="190" />
+          <circle cx="230" cy="105" r="168" stroke="rgba(255, 255, 255, 0.03)" fill="none" />
+          <circle cx="230" cy="105" r="110" stroke="rgba(255, 255, 255, 0.04)" fill="none" />
+        </g>
+
+        <!-- Cross-mesh redundant links -->
+        <path class="bw-mesh-cross" d="M111 57 L349 57 M111 153 L349 153 M62 105 L230 37 M230 37 L398 105 M398 105 L230 173 M230 173 L62 105 M111 57 L349 153 M111 153 L349 57" />
+
+        <!-- Outer mesh polygon ring -->
+        <polygon class="bw-mesh-outer" points="230,37 349,57 398,105 349,153 230,173 111,153 62,105 111,57" />
+
+        <!-- Radial mesh spokes from presence orb to 8 PC nodes -->
+        <line x1="230" y1="105" x2="230" y2="37" class="bw-mesh-spoke-active" filter="url(#bwGlow)" />
+        <line x1="230" y1="105" x2="349" y2="57" class="bw-mesh-spoke" />
+        <line x1="230" y1="105" x2="398" y2="105" class="bw-mesh-spoke-active" filter="url(#bwGlow)" />
+        <line x1="230" y1="105" x2="349" y2="153" class="bw-mesh-spoke" />
+        <line x1="230" y1="105" x2="230" y2="173" class="bw-mesh-spoke" />
+        <line x1="230" y1="105" x2="111" y2="153" class="bw-mesh-spoke-active" filter="url(#bwGlow)" />
+        <line x1="230" y1="105" x2="62" y2="105" class="bw-mesh-spoke" />
+        <line x1="230" y1="105" x2="111" y2="57" class="bw-mesh-spoke" />
+
+        <!-- Animated Presence Orb (center: 230, 105) -->
+        <g class="bw-orb-group">
+          <!-- Radial particle aura -->
+          <circle cx="230" cy="105" r="54" fill="url(#bwAuraGrad)" class="bw-aura" />
+          <circle cx="230" cy="105" r="42" fill="none" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1" stroke-dasharray="3 7" class="bw-ring-spin" />
+          <circle cx="230" cy="105" r="28" fill="none" stroke="rgba(14, 165, 233, 0.45)" stroke-width="1.2" stroke-dasharray="6 6" class="bw-ring-rev" />
+
+          <!-- Floating radial particles -->
+          <circle cx="254" cy="95" r="2.2" fill="#38bdf8" filter="url(#bwGlow)" />
+          <circle cx="210" cy="82" r="1.8" fill="#7dd3fc" filter="url(#bwGlow)" />
+          <circle cx="216" cy="126" r="2.2" fill="#38bdf8" filter="url(#bwGlow)" />
+          <circle cx="246" cy="118" r="1.6" fill="#0284c7" filter="url(#bwGlow)" />
+          <circle cx="204" cy="105" r="2" fill="#bae6fd" filter="url(#bwGlow)" />
+
+          <!-- Glowing core orb nucleus -->
+          <circle cx="230" cy="105" r="17" fill="url(#bwOrbGrad)" filter="url(#bwGlow)" class="bw-core" />
+          <circle cx="230" cy="105" r="8" fill="#e0f2fe" filter="url(#bwGlow)" />
+          <circle cx="230" cy="105" r="3" fill="#0284c7" />
+
+          <text x="230" y="132" class="bw-orb-title" text-anchor="middle">PRESENCE ORB</text>
+        </g>
+
+        <!-- 8 Multi-PC Cluster Nodes -->
+        <!-- PC-1 (Host Controller) -->
+        <g class="bw-host" transform="translate(230, 37)">
+          <circle r="14" class="bw-node-halo" />
+          <circle r="8" class="bw-node-base" />
+          <circle r="4" class="bw-node-core" />
+          <text y="-13" class="bw-lbl" text-anchor="middle">PC-1 (HOST)</text>
+          <text y="22" class="bw-sub" text-anchor="middle">127.0.0.1 · 0.2ms</text>
+        </g>
+
+        <!-- PC-2 -->
+        <g transform="translate(349, 57)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 0.3s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text x="13" y="1" class="bw-lbl" text-anchor="start">PC-2</text>
+          <text x="13" y="11" class="bw-sub" text-anchor="start">0.8ms</text>
+        </g>
+
+        <!-- PC-3 -->
+        <g transform="translate(398, 105)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 0.6s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text x="13" y="1" class="bw-lbl" text-anchor="start">PC-3</text>
+          <text x="13" y="11" class="bw-sub" text-anchor="start">1.1ms</text>
+        </g>
+
+        <!-- PC-4 -->
+        <g transform="translate(349, 153)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 0.9s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text x="13" y="3" class="bw-lbl" text-anchor="start">PC-4</text>
+          <text x="13" y="13" class="bw-sub" text-anchor="start">0.9ms</text>
+        </g>
+
+        <!-- PC-5 -->
+        <g transform="translate(230, 173)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 1.2s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text y="20" class="bw-lbl" text-anchor="middle">PC-5 · 1.2ms</text>
+        </g>
+
+        <!-- PC-6 -->
+        <g transform="translate(111, 153)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 1.5s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text x="-13" y="3" class="bw-lbl" text-anchor="end">PC-6</text>
+          <text x="-13" y="13" class="bw-sub" text-anchor="end">0.7ms</text>
+        </g>
+
+        <!-- PC-7 -->
+        <g transform="translate(62, 105)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 1.8s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text x="-13" y="1" class="bw-lbl" text-anchor="end">PC-7</text>
+          <text x="-13" y="11" class="bw-sub" text-anchor="end">1.4ms</text>
+        </g>
+
+        <!-- PC-8 -->
+        <g transform="translate(111, 57)">
+          <circle r="12" class="bw-node-halo" style="animation-delay: 2.1s;" />
+          <circle r="6" class="bw-node-base" />
+          <circle r="3" class="bw-node-core" />
+          <text x="-13" y="1" class="bw-lbl" text-anchor="end">PC-8</text>
+          <text x="-13" y="11" class="bw-sub" text-anchor="end">0.9ms</text>
+        </g>
+      </svg>
+
+      <div class="bridge-foot">
+        <span><b>8 / 8</b> <span data-t="bw_foot_nodes">nodes active</span></span>
+        <span><b>HMAC-SHA256</b> <span data-t="bw_foot_auth">mutual auth</span></span>
+        <span><b>23/23</b> <span data-t="bw_foot_tests">passing tests</span></span>
+        <span><b>&lt; 1.2 ms</b> <span data-t="bw_foot_rtt">mesh latency</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="card-type" data-t="type_remote_mesh">Remote Agent Mesh &amp; Security</span>
+    </div>
+    <h4 class="card-title"><button class="card-open" type="button" data-t="title_bridgewindows">BridgeWindows v4 — Remote Agent Mesh &amp; Presence Orb</button></h4>
+    <p class="card-desc" data-t="p_bridgewindows">Enterprise-grade distributed Windows remote execution &amp; telemetry mesh connecting up to 8 cluster nodes. Features an interactive DWM presence orb, mutual HMAC-SHA256 authenticated RPC streams, real-time multi-PC health observation, and non-blocking sub-agent task execution with 23/23 green verified tests.</p>
+    <div class="card-links">
+      <a class="card-link" href="https://github.com/toskaman/BridgeWindows-v4" target="_blank" rel="noopener"><span data-t="link_bridgewindows">View on GitHub</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+    </div>
+    <dl class="card-stats">
+      <div><dt data-t="bw_stat_nodes">cluster nodes</dt><dd>8 / 8</dd></div>
+      <div><dt data-t="bw_stat_tests">unit tests</dt><dd>23 / 23</dd></div>
+      <div><dt data-t="bw_stat_latency">mesh latency</dt><dd>&lt; 1.2 ms</dd></div>
+      <div><dt data-t="bw_stat_auth">mutual auth</dt><dd>HMAC-256</dd></div>
+    </dl>
+    <ul class="card-features">
+      <li><b data-t="bw_f1_t">Interactive Presence Orb</b><span data-t="bw_f1_d">Radial glowing particle core with DWM composition effects, displaying real-time agent activity, latency breathing, and hardware load states across all connected endpoints.</span></li>
+      <li><b data-t="bw_f2_t">Multi-Node Cluster Mesh</b><span data-t="bw_f2_d">Topology routing across 8 concurrent PC nodes (PC-1 to PC-8) with autonomous heartbeat monitoring, automatic leader election, and sub-millisecond task dispatching.</span></li>
+      <li><b data-t="bw_f3_t">Mutual HMAC-SHA256 Auth</b><span data-t="bw_f3_d">Zero-trust handshake protocol with cryptographically signed challenge nonces, rolling key rotation, and packet tamper verification eliminating MITM risks.</span></li>
+      <li><b data-t="bw_f4_t">High-Performance RPC Tunnel</b><span data-t="bw_f4_d">Multiplexed WebSocket binary frames over TLS with zero-copy stream processing, automated reconnect backoff, and out-of-order packet reassembly.</span></li>
+      <li><b data-t="bw_f5_t">Hardened Verification Suite</b><span data-t="bw_f5_d">Comprehensive automated test harness with 23/23 green unit and integration tests verifying socket resiliency, failover recovery, and memory safety.</span></li>
+    </ul>
+    <ul class="card-tags">
+      <li>TypeScript</li>
+      <li>Node.js</li>
+      <li>C#</li>
+      <li>Windows DWM</li>
+      <li>HMAC-SHA256</li>
+      <li>WebSocket</li>
+      <li>Mesh Network</li>
+      <li>Security</li>
+    </ul>
+  </div>
+</article>
               <article
                 class="card card--lg"
                 data-reveal
@@ -683,27 +1348,183 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
               <span class="group-count" data-group-count>10</span>
             </div>
             <div class="work-grid">
+              <!-- ─── Freenekit — Monitoring Réseau & Freebox OS ─── -->
               <article
-                class="card card--xl"
+                class="card card--lg"
                 data-reveal
-                data-category="desktop automation"
-                data-title="Roblox Account Manager V2"
-                data-summary="Manager Roblox nouvelle génération avec gestion multi-comptes, automatisation et tableau de bord complet."
-                data-tags="Roblox, Desktop, Automation, UX"
+                data-category="desktop"
+                data-title="Freenekit — Monitoring Réseau &amp; Freebox OS pour Windows"
+                data-summary="Freenekit : suite desktop Windows de monitoring réseau haute performance et supervision Freebox OS (Ultra 10 Gbps, Wi-Fi 7). Télémétrie temps réel de débit par processus, détection d'intrusions LAN, métriques Wi-Fi 7 et diagnostic système local-first."
+                data-tags="Windows, Network, Freebox OS, Wi-Fi 7, 10 Gbps, C#, Monitoring, SysAdmin, Security"
               >
-                <div class="card-visual v-mosaic" aria-hidden="true">
-                  <img src="assets/rbx1.png" alt="Roblox Account Manager V2, main view" loading="lazy" decoding="async" />
-                  <img src="assets/rbx2.png" alt="Roblox Account Manager V2, second view" loading="lazy" decoding="async" />
-                  <img src="assets/rbx3.png" alt="Roblox Account Manager V2, third view" loading="lazy" decoding="async" />
-                </div>
-                <div class="card-body">
-                  <div class="card-meta"><span class="card-type" data-t="type_desktop">Desktop app</span></div>
-                  <h4 class="card-title"><button class="card-open" type="button">Roblox Account Manager V2</button></h4>
-                  <p class="card-desc" data-t="p_rbx_manager">New generation Roblox Manager with many features, designed to quickly manage multiple accounts and actions.</p>
-                  <div class="card-links">
-                    <a class="card-link" href="https://github.com/toskaman/RBX-Manager-2" target="_blank" rel="noopener"><span data-t="link_rbx_manager">View on GitHub</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <div class="card-visual v-freenekit" aria-hidden="true">
+                  <div class="fk-hub">
+                    <!-- Head: Freebox model & active live badges -->
+                    <div class="fk-hub-head">
+                      <div class="fk-hub-id">
+                        <span class="fk-live-dot"></span>
+                        <span class="fk-hub-title" data-t="fk_vis_box">Freebox Ultra · 10 Gbps FTTH</span>
+                      </div>
+                      <div class="fk-hub-badges">
+                        <span class="fk-badge fk-badge--wifi7">
+                          <svg class="i fk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" /></svg>
+                          <span data-t="fk_vis_wifi7">Wi-Fi 7 · 802.11be</span>
+                        </span>
+                        <span class="fk-badge fk-badge--shield">
+                          <svg class="i fk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+                          <span data-t="fk_vis_shield">Shield Active</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- Body: 10G WAN gauge & active process bandwidth breakdown -->
+                    <div class="fk-hub-body">
+                      <!-- 10 Gbps Bandwidth Gauge -->
+                      <div class="fk-col fk-col--gauge">
+                        <div class="fk-col-head">
+                          <span class="fk-col-label" data-t="fk_vis_gauge_title">WAN Throughput</span>
+                          <span class="fk-pill-live">SYNC 10G</span>
+                        </div>
+                        <div class="fk-speed-num">
+                          <span class="fk-speed-val">8.42</span>
+                          <span class="fk-speed-unit">Gbps</span>
+                        </div>
+                        <div class="fk-progress-track">
+                          <div class="fk-progress-bar fk-progress-bar--wan" style="width: 84.2%"></div>
+                        </div>
+                        <div class="fk-duo-rates">
+                          <span class="fk-rate-item fk-rate-item--down">
+                            <svg class="i fk-dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
+                            <span>8.42 Gbps DL</span>
+                          </span>
+                          <span class="fk-rate-item fk-rate-item--up">
+                            <svg class="i fk-dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+                            <span>780 Mbps UL</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Active Process Split -->
+                      <div class="fk-col fk-col--procs">
+                        <div class="fk-col-head">
+                          <span class="fk-col-label" data-t="fk_vis_procs_title">Active Process Split</span>
+                          <span class="fk-procs-sum">1.05 GB/s</span>
+                        </div>
+                        <ul class="fk-procs-list">
+                          <li class="fk-proc-row">
+                            <span class="fk-proc-name">Steam.exe</span>
+                            <div class="fk-proc-track"><div class="fk-proc-bar fk-proc-bar--p1" style="width: 72%"></div></div>
+                            <span class="fk-proc-rate">760 MB/s</span>
+                          </li>
+                          <li class="fk-proc-row">
+                            <span class="fk-proc-name">qBittorrent.exe</span>
+                            <div class="fk-proc-track"><div class="fk-proc-bar fk-proc-bar--p2" style="width: 22%"></div></div>
+                            <span class="fk-proc-rate">235 MB/s</span>
+                          </li>
+                          <li class="fk-proc-row">
+                            <span class="fk-proc-name">msedge.exe</span>
+                            <div class="fk-proc-track"><div class="fk-proc-bar fk-proc-bar--p3" style="width: 6%"></div></div>
+                            <span class="fk-proc-rate">64 MB/s</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Telemetry: SVG waveform & security check footer -->
+                    <div class="fk-hub-telemetry">
+                      <svg class="fk-wave-svg" viewBox="0 0 400 55" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="fk-wave-gradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+                            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0" />
+                          </linearGradient>
+                        </defs>
+                        <path class="fk-wave-grid" d="M0 14H400M0 28H400M0 42H400" />
+                        <path class="fk-wave-fill" fill="url(#fk-wave-gradient)" d="M0 50 L0 32 Q25 14, 50 26 T100 18 T150 10 T200 22 T250 8 T300 15 T350 6 T400 12 L400 50 Z" />
+                        <path class="fk-wave-line" d="M0 32 Q25 14, 50 26 T100 18 T150 10 T200 22 T250 8 T300 15 T350 6 T400 12" />
+                      </svg>
+                      <div class="fk-hub-foot">
+                        <span class="fk-shield-status">
+                          <i class="fk-sec-dot"></i>
+                          <span data-t="fk_vis_sec_detail">Zero ARP Spoof · 42 Devices Checked · 0 Rogue</span>
+                        </span>
+                        <span class="fk-rtt-stat" data-t="fk_vis_rtt">RTT Mafreebox: 0.8ms · 0% Loss</span>
+                      </div>
+                    </div>
                   </div>
-                  <ul class="card-tags"><li>Roblox</li><li>Multi-account</li><li>Automation</li></ul>
+                </div>
+
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="card-type" data-t="type_network_desktop">Network &amp; Desktop</span>
+                  </div>
+                  <h4 class="card-title">
+                    <button class="card-open" type="button" data-t="title_freenekit">Freenekit — Monitoring Réseau &amp; Freebox OS pour Windows</button>
+                  </h4>
+                  <p class="card-desc" data-t="p_freenekit">Advanced Windows desktop suite for high-speed network monitoring and native Freebox OS integration: real-time 10 Gbps WAN throughput gauges, per-process bandwidth tracking, Wi-Fi 7 (802.11be) diagnostics and automated LAN anti-intrusion protection.</p>
+                  <div class="card-links">
+                    <a class="card-link" href="https://github.com/toskaman/Freenekit" target="_blank" rel="noopener">
+                      <span data-t="link_fk_github">GitHub Repository</span>
+                      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                    </a>
+                    <a class="card-link" href="https://paypal.me/toskaman" target="_blank" rel="noopener">
+                      <span data-t="link_fk_sponsor">Sponsor (PayPal)</span>
+                      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                    </a>
+                    <a class="card-link card-link--vt" href="https://www.virustotal.com/gui/file/freenekit" target="_blank" rel="noopener">
+                      <span data-t="link_fk_virustotal">VirusTotal Clean (0/72)</span>
+                      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+                    </a>
+                  </div>
+                  <dl class="card-stats">
+                    <div><dt data-t="fk_stat_speed">WAN throughput</dt><dd>10 Gbps</dd></div>
+                    <div><dt data-t="fk_stat_wifi">Wi-Fi standard</dt><dd>Wi-Fi 7</dd></div>
+                    <div><dt data-t="fk_stat_latency">LAN API latency</dt><dd>&lt; 1 ms</dd></div>
+                    <div><dt data-t="fk_stat_overhead">RAM &amp; CPU load</dt><dd>&lt; 0.8%</dd></div>
+                  </dl>
+                  <ul class="card-features">
+                    <li>
+                      <b data-t="fk_f1_t">Freebox OS v10 &amp; Ultra integration</b>
+                      <span data-t="fk_f1_d">Direct local API connection to Freebox Ultra, Pop and Delta: instant discovery, session token auth with hardware LCD challenge, 10G-EPON fiber optical budget and real-time WAN synchronization metrics.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f2_t">Per-process bandwidth tracking</b>
+                      <span data-t="fk_f2_d">Native Windows ETW (Event Tracing for Windows) kernel monitors combined with GetExtendedTcpTable hooks to break down instantaneous upload and download throughput per active executable.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f3_t">Wi-Fi 7 (802.11be) intelligence</b>
+                      <span data-t="fk_f3_d">Detailed telemetry on Multi-Link Operation (MLO), 320 MHz channel width allocation, 6 GHz band congestion analysis, spatial stream diagnostics and automated channel hopping advice.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f4_t">LAN security &amp; anti-intrusion shield</b>
+                      <span data-t="fk_f4_d">Continuous ARP inspection engine flagging ARP spoofing / MITM attacks, instantaneous alerts on unknown MAC address associations, OUI vendor lookup and one-click rogue device isolation.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f5_t">Device &amp; parental controls</b>
+                      <span data-t="fk_f5_d">Instant Wi-Fi access suspension per device, custom scheduling rules, DoH (DNS-over-HTTPS) enforcement and guest network segmentation right from the Windows desktop.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f6_t">Hardware health &amp; fan diagnostics</b>
+                      <span data-t="fk_f6_d">Real-time supervision of Freebox internal temperatures (CPUs, Wi-Fi PHYs, SFP+ module), fan RPM speed curves and storage drive SMART telemetry.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f7_t">Floating HUD &amp; system tray companion</b>
+                      <span data-t="fk_f7_d">Ultra-compact glassmorphism overlay displaying live speeds and ping in-game or over desktop windows, with low-overhead system tray minimization.</span>
+                    </li>
+                    <li>
+                      <b data-t="fk_f8_t">Zero telemetry &amp; 100% local-first</b>
+                      <span data-t="fk_f8_d">Compiled as a clean, standalone native executable with zero cloud dependencies, 0/72 VirusTotal clean score and verified minimal CPU/memory footprint (&lt; 25 MB RAM).</span>
+                    </li>
+                  </ul>
+                  <ul class="card-tags">
+                    <li>Windows</li>
+                    <li>Freebox OS</li>
+                    <li>Wi-Fi 7</li>
+                    <li>10 Gbps</li>
+                    <li>C#</li>
+                    <li>Network</li>
+                    <li>Security</li>
+                  </ul>
                 </div>
               </article>
 
@@ -890,9 +1711,284 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             <div class="group-head" data-reveal>
               <span class="group-index">D</span>
               <h3 class="group-title" data-t="group_games">Games &amp; Automation</h3>
-              <span class="group-count" data-group-count>10</span>
+              <span class="group-count" data-group-count>11</span>
             </div>
             <div class="work-grid">
+<!-- ==========================================================================
+     RBX Manager 2 — Modern Roblox Multi-Account Manager (card card--full)
+     Placement: msdos/index.html (Group D: Games & Automation)
+     ========================================================================== -->
+<article
+  class="card card--full"
+  data-reveal
+  data-category="game desktop security"
+  data-title="RBX Manager 2 — Modern Roblox Multi-Account Manager"
+  data-summary="Roblox Account Manager (RAM) de nouvelle génération pour Windows : multi-instance sans injection de DLL (DuplicateHandle natif Hyperion-safe), micro-fenêtres 320x240 réduisant la VRAM de 84 %, Anti-AFK en arrière-plan sans vol de curseur, limiteur de FPS par compte, chiffrement DPAPI local et tableau de bord web mobile."
+  data-tags="Roblox, Multi-Account, Windows, RAM, C#, WPF, Anti-AFK, Performance, Hyperion Safe, DPAPI, Automation"
+>
+  <div class="card-visual v-rbx" data-dialog="clone" aria-hidden="true">
+    <div class="rbx-matrix">
+      <div class="rbx-head">
+        <div class="rbx-brand">
+          <span class="rbx-logo-icon">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /></svg>
+          </span>
+          <span class="rbx-brand-title">RBX Manager 2</span>
+          <span class="rbx-version-pill">v1.9.36</span>
+        </div>
+        <div class="rbx-badges">
+          <span class="rbx-badge is-safe">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+            <span data-t="rbx_badge_byfron">Byfron Safe</span>
+          </span>
+          <span class="rbx-badge is-vram">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19v-2M10 19v-2M14 19v-2M18 19v-2M6 5v2M10 5v2M14 5v2M18 5v2M4 7h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" /></svg>
+            <span data-t="rbx_badge_vram">-84% VRAM</span>
+          </span>
+          <span class="rbx-badge is-pulse">
+            <i class="rbx-pulse-dot"></i>
+            <span data-t="rbx_badge_antiafk">Anti-AFK</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="rbx-grid">
+        <!-- Micro-Window 1 -->
+        <div class="rbx-win is-active">
+          <div class="rbx-win-bar">
+            <div class="rbx-win-dots"><span></span><span></span><span></span></div>
+            <span class="rbx-win-user">Main · #01</span>
+            <span class="rbx-win-fps">144 FPS</span>
+          </div>
+          <div class="rbx-win-view">
+            <div class="rbx-win-screen">
+              <span class="rbx-win-game">Pet Simulator 99</span>
+              <div class="rbx-win-wireframe">
+                <span class="wire-char"></span>
+                <span class="wire-loot"></span>
+                <span class="wire-hud"></span>
+              </div>
+            </div>
+            <div class="rbx-win-meta">
+              <span class="rbx-win-res">320×240</span>
+              <span class="rbx-win-afk is-pulsing"><i class="dot"></i>Anti-AFK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micro-Window 2 -->
+        <div class="rbx-win">
+          <div class="rbx-win-bar">
+            <div class="rbx-win-dots"><span></span><span></span><span></span></div>
+            <span class="rbx-win-user">AltFarm · #02</span>
+            <span class="rbx-win-fps">15 FPS</span>
+          </div>
+          <div class="rbx-win-view">
+            <div class="rbx-win-screen">
+              <span class="rbx-win-game">Blox Fruits (Sea 3)</span>
+              <div class="rbx-win-wireframe">
+                <span class="wire-char"></span>
+                <span class="wire-loot"></span>
+                <span class="wire-hud"></span>
+              </div>
+            </div>
+            <div class="rbx-win-meta">
+              <span class="rbx-win-res">320×240</span>
+              <span class="rbx-win-afk is-pulsing"><i class="dot"></i>Anti-AFK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micro-Window 3 -->
+        <div class="rbx-win">
+          <div class="rbx-win-bar">
+            <div class="rbx-win-dots"><span></span><span></span><span></span></div>
+            <span class="rbx-win-user">Grinder · #03</span>
+            <span class="rbx-win-fps">15 FPS</span>
+          </div>
+          <div class="rbx-win-view">
+            <div class="rbx-win-screen">
+              <span class="rbx-win-game">Anime Vanguards</span>
+              <div class="rbx-win-wireframe">
+                <span class="wire-char"></span>
+                <span class="wire-loot"></span>
+                <span class="wire-hud"></span>
+              </div>
+            </div>
+            <div class="rbx-win-meta">
+              <span class="rbx-win-res">320×240</span>
+              <span class="rbx-win-afk is-pulsing"><i class="dot"></i>Anti-AFK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micro-Window 4 -->
+        <div class="rbx-win">
+          <div class="rbx-win-bar">
+            <div class="rbx-win-dots"><span></span><span></span><span></span></div>
+            <span class="rbx-win-user">AltVIP · #04</span>
+            <span class="rbx-win-fps">15 FPS</span>
+          </div>
+          <div class="rbx-win-view">
+            <div class="rbx-win-screen">
+              <span class="rbx-win-game">Blade Ball (VIP)</span>
+              <div class="rbx-win-wireframe">
+                <span class="wire-char"></span>
+                <span class="wire-loot"></span>
+                <span class="wire-hud"></span>
+              </div>
+            </div>
+            <div class="rbx-win-meta">
+              <span class="rbx-win-res">320×240</span>
+              <span class="rbx-win-afk is-pulsing"><i class="dot"></i>Anti-AFK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micro-Window 5 -->
+        <div class="rbx-win">
+          <div class="rbx-win-bar">
+            <div class="rbx-win-dots"><span></span><span></span><span></span></div>
+            <span class="rbx-win-user">AltDrop · #05</span>
+            <span class="rbx-win-fps">15 FPS</span>
+          </div>
+          <div class="rbx-win-view">
+            <div class="rbx-win-screen">
+              <span class="rbx-win-game">Sol's RNG</span>
+              <div class="rbx-win-wireframe">
+                <span class="wire-char"></span>
+                <span class="wire-loot"></span>
+                <span class="wire-hud"></span>
+              </div>
+            </div>
+            <div class="rbx-win-meta">
+              <span class="rbx-win-res">320×240</span>
+              <span class="rbx-win-afk is-pulsing"><i class="dot"></i>Anti-AFK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Micro-Window 6 -->
+        <div class="rbx-win">
+          <div class="rbx-win-bar">
+            <div class="rbx-win-dots"><span></span><span></span><span></span></div>
+            <span class="rbx-win-user">Trader · #06</span>
+            <span class="rbx-win-fps">15 FPS</span>
+          </div>
+          <div class="rbx-win-view">
+            <div class="rbx-win-screen">
+              <span class="rbx-win-game">Trading Plaza</span>
+              <div class="rbx-win-wireframe">
+                <span class="wire-char"></span>
+                <span class="wire-loot"></span>
+                <span class="wire-hud"></span>
+              </div>
+            </div>
+            <div class="rbx-win-meta">
+              <span class="rbx-win-res">320×240</span>
+              <span class="rbx-win-afk is-pulsing"><i class="dot"></i>Anti-AFK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rbx-foot">
+        <span class="rbx-foot-item"><b data-t="rbx_foot_instances">6 / 6</b> <span data-t="rbx_foot_active">active clients</span></span>
+        <span class="rbx-foot-item"><b data-t="rbx_foot_vram">-84%</b> <span data-t="rbx_foot_vram_txt">VRAM per frame</span></span>
+        <span class="rbx-foot-item"><b data-t="rbx_foot_mutex">Win32 API</b> <span data-t="rbx_foot_mutex_txt">DuplicateHandle</span></span>
+        <span class="rbx-foot-item"><b data-t="rbx_foot_restore">0 ms</b> <span data-t="rbx_foot_restore_txt">instant restore</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="card-type" data-t="type_ram">Multi-account manager</span>
+    </div>
+    <h4 class="card-title">
+      <button class="card-open" type="button" data-t="title_rbx_manager_2">RBX Manager 2 — Modern Roblox Multi-Account Manager</button>
+    </h4>
+    <p class="card-desc" data-t="p_rbx_manager_2">
+      Modern, high-performance Roblox Account Manager (RAM) for Windows: run unlimited Roblox instances simultaneously without mouse hijacking, featuring 320×240 micro-windows cutting VRAM by 84%, non-intrusive background Anti-AFK, independent per-account FPS throttling, local DPAPI encryption, and mobile LAN web dashboard.
+    </p>
+    <div class="card-links">
+      <a class="card-link" href="https://github.com/toskaman/RBX-Manager-2" target="_blank" rel="noopener">
+        <span data-t="link_rbx_github">GitHub Repository</span>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+      <a class="card-link" href="https://toskaman.github.io/RBX-Manager-2/" target="_blank" rel="noopener">
+        <span data-t="link_rbx_site">Official Website</span>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+      <a class="card-link" href="https://discord.gg/zNpj8ctH9p" target="_blank" rel="noopener">
+        <span data-t="link_rbx_discord">Discord (10k+)</span>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+      <a class="card-link" href="https://github.com/toskaman/RBX-Manager-2/releases/download/v1.9.34.1/brag.mp4" target="_blank" rel="noopener">
+        <span data-t="link_rbx_video">Showcase Video</span>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+    </div>
+    <dl class="card-stats">
+      <div><dt data-t="rbx_stat_vram">VRAM load reduction</dt><dd>-84%</dd></div>
+      <div><dt data-t="rbx_stat_res">micro-window mode</dt><dd>320×240</dd></div>
+      <div><dt data-t="rbx_stat_community">Discord members</dt><dd>10k+</dd></div>
+      <div><dt data-t="rbx_stat_security">Byfron integrity</dt><dd>0 DLL</dd></div>
+    </dl>
+    <ul class="card-features">
+      <li>
+        <b data-t="rbx_f1_t">Native Mutex Management</b>
+        <span data-t="rbx_f1_d">Closes singleton mutex via standard Windows DuplicateHandle (DUPLICATE_CLOSE_SOURCE) — zero DLL injection, zero memory modification, 100% Hyperion and Byfron safe.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f2_t">320×240 Micro-Window Mode</b>
+        <span data-t="rbx_f2_d">Overrides the default 800×600 restriction via WS_POPUP, reducing raster pixel workload and VRAM consumption by ~84% to tile dozens of accounts on a single screen.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f3_t">Background Anti-AFK</b>
+        <span data-t="rbx_f3_d">Custom virtual event dispatcher preventing 20-minute idle kicks without stealing physical mouse cursor or keyboard focus — keep working while farming.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f4_t">Independent FPS Throttling</b>
+        <span data-t="rbx_f4_d">Granular per-account FPS limits: cap idle farming instances to 15 FPS while maintaining 144 FPS on your main gaming client to eliminate CPU overheating.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f5_t">Local DPAPI Encryption</b>
+        <span data-t="rbx_f5_d">Stored .ROBLOSECURITY authentication cookies and credentials encrypted strictly on the local machine via Windows DPAPI and master password protection.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f6_t">Remote Web Dashboard</b>
+        <span data-t="rbx_f6_d">Built-in local HTTP web server to monitor account status, launch games, and control sessions from a phone, tablet, or secondary PC over LAN.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f7_t">0ms Instant Window Restore</b>
+        <span data-t="rbx_f7_d">Seamless single-click instant toggle between 320×240 micro-farming view and normal native Roblox window.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f8_t">Automated Logs Cleaner</b>
+        <span data-t="rbx_f8_d">Automatically cleans debug log files older than 24h or larger than 50 MB, saving gigabytes of hidden SSD storage.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f9_t">Fast Migration &amp; VIP Server Hub</b>
+        <span data-t="rbx_f9_d">1-click cookie import compatible with legacy RAM managers, tags, aliases, and automated VIP private server joining.</span>
+      </li>
+      <li>
+        <b data-t="rbx_f10_t">Discord Webhook Alerts</b>
+        <span data-t="rbx_f10_d">Real-time alerts for launches, disconnects, and crashes with granular per-account muting filters.</span>
+      </li>
+    </ul>
+    <ul class="card-tags">
+      <li>Roblox</li>
+      <li>Multi-account</li>
+      <li>WPF</li>
+      <li>C#</li>
+      <li>Anti-AFK</li>
+      <li>Byfron Safe</li>
+      <li>Performance</li>
+      <li>Automation</li>
+    </ul>
+  </div>
+</article>
               <article
                 class="card card--xl"
                 data-reveal
@@ -1287,6 +2383,85 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
       </section>
 
       <!-- ─── Contact ─── -->
+      
+      <!-- ========================================================================= -->
+      <!-- SECTION: Acquisitions & Senior Engineering Talent                         -->
+      <!-- ========================================================================= -->
+      <section id="commercial-acquisition" class="commercial-section">
+        <div class="container">
+          <div class="commercial-header">
+            <span class="badge badge--gold" data-t="acq_eyebrow">COMMERCIAL IP &amp; SENIOR TALENT</span>
+            <h2 data-t="acq_title">Proprietary Systems IP, Custom Licensing &amp; Executive Engineering</h2>
+            <p class="lead" data-t="acq_desc">
+              Proven solo builder behind multi-threaded Vulkan engines, hardened LAN agents, and local AI runtimes. Available for asset acquisitions, commercial source licensing, and high-stakes Principal/Staff Systems Engineering roles.
+            </p>
+          </div>
+
+          <!-- 4 Value Pillars Grid -->
+          <div class="grid grid--4col">
+            <!-- Pillar 1: Full IP Buyout -->
+            <div class="card card--enterprise">
+              <div class="card-icon">🏛️</div>
+              <h3 data-t="acq_p1_title">Full IP Acquisition &amp; M&amp;A</h3>
+              <p data-t="acq_p1_desc">Complete transfer of proprietary codebases, tooling, documentation, and continuous development rights with verified clean-room provenance.</p>
+              <ul class="spec-list">
+                <li data-t="acq_p1_assets"><strong>Assets:</strong> OpenKF (Vulkan engine), BridgeWindows v4 (telemetry agent), Anticipate (Jira AI firewall)</li>
+                <li data-t="acq_p1_provenance"><strong>Provenance:</strong> 100% clean-room implementations; zero GPL/retail binary contamination</li>
+                <li data-t="acq_p1_handover"><strong>Handover:</strong> Architecture schematics, automated test suites, deployment automation</li>
+              </ul>
+            </div>
+
+            <!-- Pillar 2: Commercial Licensing -->
+            <div class="card card--enterprise">
+              <div class="card-icon">📜</div>
+              <h3 data-t="acq_p2_title">Commercial OEM &amp; Source Licensing</h3>
+              <p data-t="acq_p2_desc">Deploy battle-tested low-level modules and local AI protocols into your commercial proprietary stack under enterprise-friendly terms.</p>
+              <ul class="spec-list">
+                <li data-t="acq_p2_redist"><strong>OEM Redistribution:</strong> Royalty-free binary or source inclusion</li>
+                <li data-t="acq_p2_multiseat"><strong>Multi-Seat Enterprise:</strong> RBX-Manager 2 background micro-window virtualization engine</li>
+                <li data-t="acq_p2_dual"><strong>Dual-Licensing:</strong> Flexible commercial waivers for PolyForm / proprietary environments</li>
+              </ul>
+            </div>
+
+            <!-- Pillar 3: Principal Systems / Staff Roles -->
+            <div class="card card--enterprise">
+              <div class="card-icon">⚡</div>
+              <h3 data-t="acq_p3_title">Senior / Staff Systems Engineering</h3>
+              <p data-t="acq_p3_desc">Rapid force-multiplier for engineering teams tackling bare-metal performance, reverse-engineering, or local AI integration.</p>
+              <ul class="spec-list">
+                <li data-t="acq_p3_roles"><strong>Role Fit:</strong> Principal Systems Architect, Lead Reverse Engineer, Low-Level R&amp;D Lead</li>
+                <li data-t="acq_p3_stack"><strong>Focus Areas:</strong> Vulkan/C/Rust/Win32, native protocol dissection, local AI orchestration</li>
+                <li data-t="acq_p3_avail"><strong>Availability:</strong> Remote worldwide (Full-Time or Strategic Fractional Retainer)</li>
+              </ul>
+            </div>
+
+            <!-- Pillar 4: Empirical Guarantees -->
+            <div class="card card--enterprise">
+              <div class="card-icon">🛡️</div>
+              <h3 data-t="acq_p4_title">Empirical Evidence Guarantee</h3>
+              <p data-t="acq_p4_desc">Zero vaporware. Every system is backed by reproducible benchmarks, automated CI test gates, and physical hardware verification logs.</p>
+              <ul class="spec-list">
+                <li data-t="acq_p4_kf"><strong>OpenKF:</strong> 671 FPS bare-metal Vulkan vs 120 FPS capped retail (0.14s instant load)</li>
+                <li data-t="acq_p4_ob"><strong>OpenBridge:</strong> 820+ automated CI tests, 37 hardware receipts on real Android/IoT</li>
+                <li data-t="acq_p4_rbx"><strong>RBX-Manager:</strong> 0/72 VirusTotal clean, zero-injection native Win32 handle closure</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Commercial Action Banner -->
+          <div class="commercial-cta-banner">
+            <div class="cta-text">
+              <h4 data-t="acq_banner_title">Request Due Diligence Package or Discuss Direct Engagement</h4>
+              <p data-t="acq_banner_desc">NDA-ready. Technical dossiers, reproducible benchmark suites, and live hardware demonstrations available upon request.</p>
+            </div>
+            <div class="cta-actions">
+              <a href="mailto:toskaman5962+portfolio@gmail.com?subject=Commercial%20Inquiry%20%2F%20Acquisition%20-%20Toskaman" class="btn btn--primary" data-t="acq_cta_primary">Inquire Commercial Terms</a>
+              <a href="https://github.com/toskaman" class="btn btn--secondary" target="_blank" rel="noopener" data-t="acq_cta_secondary">Inspect GitHub Repositories</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="contact" aria-labelledby="contact-title">
         <div class="container contact-grid">
           <div class="contact-copy" data-reveal>
