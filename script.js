@@ -31,6 +31,9 @@
 
   const translations = {
     fr: {
+      "hk_eyebrow": "Hackathons 2026",
+      "hk_project": "Projet",
+      "hk_participant": "Participant",
       "cert_eyebrow": "Certifications",
       "cert_rocm_title": "AMD ROCm™ Certified Associate",
       "cert_rocm_issuer": "Délivrée par AMD",
@@ -749,6 +752,9 @@
 
     },
     en: {
+      "hk_eyebrow": "Hackathons 2026",
+      "hk_project": "Project",
+      "hk_participant": "Participant",
       "cert_eyebrow": "Certifications",
       "cert_rocm_title": "AMD ROCm™ Certified Associate",
       "cert_rocm_issuer": "Issued by AMD",
