@@ -237,6 +237,20 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
             </article>
           </div>
 
+          <div class="certs" data-reveal>
+            <p class="section-index"><span>—</span><span data-t="cert_eyebrow">Certifications</span></p>
+            <ul class="cert-list">
+              <li class="cert">
+                <img class="cert-badge" src="assets/cert_amd_rocm.png" alt="AMD ROCm Certified Associate badge" width="96" height="96" loading="lazy" decoding="async" />
+                <div class="cert-body">
+                  <h3 class="cert-title" data-t="cert_rocm_title">AMD ROCm™ Certified Associate</h3>
+                  <p class="cert-meta"><span data-t="cert_rocm_issuer">Issued by AMD</span> · <time datetime="2026-11-05" data-t="cert_rocm_date">November 2026</time></p>
+                  <p class="cert-desc" data-t="cert_rocm_desc">GPU computing on the AMD ROCm open software stack: HIP programming, ROCm libraries and tooling, profiling and running AI workloads on AMD Instinct and Radeon GPUs.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
           <div class="journey">
             <div class="journey-head" data-reveal>
               <p class="section-index"><span>—</span><span data-t="exp_eyebrow">Journey</span></p>
@@ -942,6 +956,74 @@ MODE=PASSION_DRIVEN,LOCAL_FIRST</pre>
                     <li><b data-t="ant_f8_t">Enterprise Rigor &amp; Testing</b><span data-t="ant_f8_d">111 automated tests (unit, integration, Playwright browser), zero console warnings, strict TypeScript typing and responsive navy/teal HUD.</span></li>
                   </ul>
                   <ul class="card-tags"><li>Atlassian Forge</li><li>TypeScript</li><li>React</li><li>Jira</li><li>Governance</li><li>AI Firewall</li></ul>
+                </div>
+              </article>
+
+              <article
+                class="card card--lg"
+                data-reveal
+                data-category="research ai desktop"
+                data-title="GENESIS RT — The Physical World Compiler (QNX)"
+                data-summary="Du cahier des charges machine au contrôleur QNX 8.0 natif testé : Machine IR typée, génération C déterministe, cellule industrielle AMR + convoyeur, injection de pannes et passeport de preuves vérifiable. QNX Global Hackathon 2026."
+                data-tags="QNX, C, Python, RTOS, Embedded, Codegen, Verification, Hackathon"
+              >
+                <div class="card-visual v-term" aria-hidden="true">
+                  <div class="term">
+                    <p class="term-line"><span class="term-prompt">$</span> genesis-rt demo --ir cell-ir.json</p>
+                    <p class="term-line">validate · codegen · qcc · QNX 8.0 target</p>
+                    <p class="term-line is-ok">target matrix 14/14 PASS</p>
+                    <p class="term-line is-ok">gate: PASS · QNX_PERFORMANCE_MEASURED</p>
+                    <p class="term-line is-dim">passport chain valid · anchor match</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_genesis">QNX Developer Tooling</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_genesis">GENESIS RT — The Physical World Compiler</button></h4>
+                  <p class="card-desc" data-t="p_genesis">Turns a constrained machine description into a typed Machine IR, generates a native QNX 8.0 multi-process controller in C, runs it, breaks it on purpose with seeded fault injection and produces a hash-linked evidence passport. Built for the QNX Global Hackathon 2026. No safety certification is claimed.</p>
+                  <div class="card-links">
+                    <a class="card-link" href="https://github.com/toskaman/genesis-rt" target="_blank" rel="noopener"><span data-t="link_repo">View on GitHub</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                  </div>
+                  <dl class="card-stats">
+                    <div><dt data-t="gen_stat_tests">host tests passing</dt><dd>487</dd></div>
+                    <div><dt data-t="gen_stat_matrix">on-target QNX checks</dt><dd>14/14</dd></div>
+                    <div><dt data-t="gen_stat_target">target</dt><dd>QNX 8.0</dd></div>
+                    <div><dt data-t="gen_stat_license">license</dt><dd>Apache-2.0</dd></div>
+                  </dl>
+                  <ul class="card-tags"><li>QNX 8.0</li><li>C</li><li>Python</li><li>RTOS</li><li>Fault injection</li><li>Evidence</li></ul>
+                </div>
+              </article>
+
+              <article
+                class="card card--lg"
+                data-reveal
+                data-category="research ai"
+                data-title="PHOENIX — Recovery Intelligence for UGREEN AI NAS"
+                data-summary="Skill IA locale pour NAS UGREEN : évalue si la documentation et les fichiers d'un projet suffisent à le reprendre après une perte de machine ou un départ, avec des preuves citées et sans jamais confondre fichiers trouvés et restauration. UGREEN AI NAS Hackathon 2026."
+                data-tags="AI, NAS, UGREEN, Agents, Local AI, Recovery, Hackathon"
+              >
+                <div class="card-visual v-term" aria-hidden="true">
+                  <div class="term">
+                    <p class="term-line"><span class="term-prompt">›</span> file-agent · document-agent · knowledge-agent</p>
+                    <p class="term-line">FOUND · CONFLICTING · NOT FOUND IN SCOPE · UNKNOWN</p>
+                    <p class="term-line is-warn">DOCUMENTARY BLOCKER IDENTIFIED</p>
+                    <p class="term-line is-ok">checker: static-pass · 0 errors · 0 warnings</p>
+                    <p class="term-line is-dim">on-device · no external API</p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="card-type" data-t="type_phoenix">Local AI · NAS Skill</span></div>
+                  <h4 class="card-title"><button class="card-open" type="button" data-t="title_phoenix">PHOENIX — Recovery Intelligence</button></h4>
+                  <p class="card-desc" data-t="p_phoenix">On-device AI Skill for UGREEN AI NAS: three expert agents check whether a project's documentation and files are enough to resume work after a computer loss or a team departure, with cited evidence and an explicit refusal to confuse "files found" with "restored". UGREEN AI NAS Hackathon 2026, round 1.</p>
+                  <div class="card-links">
+                    <a class="card-link" href="https://github.com/toskaman/UGREEN-PHOENIX" target="_blank" rel="noopener"><span data-t="link_repo">View on GitHub</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                  </div>
+                  <dl class="card-stats">
+                    <div><dt data-t="phx_stat_checker">official checker</dt><dd>static-pass</dd></div>
+                    <div><dt data-t="phx_stat_checks">workflow checks</dt><dd>31/31</dd></div>
+                    <div><dt data-t="phx_stat_agents">expert agents</dt><dd>3</dd></div>
+                    <div><dt data-t="phx_stat_nas">real NAS run</dt><dd data-t="phx_stat_nas_v">not yet</dd></div>
+                  </dl>
+                  <ul class="card-tags"><li>Local AI</li><li>Agents</li><li>UGREEN NAS</li><li>Recovery</li><li>Evidence</li></ul>
                 </div>
               </article>
 
