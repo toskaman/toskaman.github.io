@@ -6105,3 +6105,125 @@ html:not(.js) .filter.is-active {
     display: none;
   }
 }
+
+/* Certifications (About section) */
+.certs {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.cert-list {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cert {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 760px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  transition: border-color 0.35s ease;
+}
+
+.cert:hover {
+  border-color: var(--line-2);
+}
+
+.cert-badge {
+  flex: none;
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cert-title {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.cert-meta {
+  margin: 0 0 8px;
+  color: var(--ink-3);
+  font-size: 0.875rem;
+}
+
+.cert-desc {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+@media (max-width: 560px) {
+  .cert {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Terminal-style card visual (GENESIS RT, PHOENIX) */
+.v-term {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.term {
+  position: relative;
+  width: min(100%, 520px);
+  padding: 18px 20px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--surface);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.term-line {
+  margin: 0;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+
+.term-prompt {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.term-line.is-ok {
+  color: var(--ok);
+}
+
+.term-line.is-warn {
+  color: var(--accent);
+}
+
+.term-line.is-dim {
+  color: var(--ink-3);
+}
+
+@media (max-width: 560px) {
+  .v-term {
+    padding: 14px;
+  }
+
+  .term {
+    padding: 12px 14px;
+    font-size: 0.7rem;
+    line-height: 1.55;
+  }
+
+  .term-line.is-dim {
+    display: none;
+  }
+}
